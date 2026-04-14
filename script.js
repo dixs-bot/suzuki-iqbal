@@ -10,11 +10,11 @@ const products = [
     category: 'passenger',
     tagline: '7-Seater SUV Hybrid',
     description: 'SUV 7 penumpang dengan teknologi Smart Hybrid, ground clearance tinggi, dan desain maskulin. Cocok untuk keluarga aktif yang butuh kenyamanan dan efisiensi BBM.',
-    image: 'https://picsum.photos/seed/suzuki-xl7-blue/600/400',
+    image: 'xl7.jpg',
     gallery: [
-      'https://picsum.photos/seed/xl7-angle1/600/400',
-      'https://picsum.photos/seed/xl7-angle2/600/400',
-      'https://picsum.photos/seed/xl7-interior/600/400'
+      'xl7-angle1.jpg',
+      'xl7-angle2.jpg',
+      'xl7-interior.jpg'
     ],
     variants: [
       { name: 'Alpha AT', price: 315000000 },
@@ -49,11 +49,11 @@ const products = [
     category: 'passenger',
     tagline: 'MPV Keluarga Hybrid',
     description: 'MPV keluarga terlaris dengan Smart Hybrid Technology. Irit BBM, kabin luas, dan berkarakter elegan untuk mobilitas keluarga sehari-hari.',
-    image: 'https://picsum.photos/seed/suzuki-ertiga-white/600/400',
+    image: 'ertiga.jpg',
     gallery: [
-      'https://picsum.photos/seed/ertiga-side/600/400',
-      'https://picsum.photos/seed/ertiga-rear/600/400',
-      'https://picsum.photos/seed/ertiga-cabin/600/400'
+      'ertiga-side.jpg',
+      'ertiga-rear.jpg',
+      'ertiga-cabin.jpg'
     ],
     variants: [
       { name: 'GX AT Hybrid', price: 272000000 },
@@ -88,11 +88,11 @@ const products = [
     category: 'commercial',
     tagline: 'Raja Niaga Indonesia',
     description: 'Pick up terlaris di Indonesia dengan daya angkut maksimal, mesin bandel, dan biaya operasional rendah. Pilihan tepat untuk usaha Anda.',
-    image: 'https://picsum.photos/seed/suzuki-carry-pickup/600/400',
+    image: 'carry.jpg',
     gallery: [
-      'https://picsum.photos/seed/carry-flat/600/400',
-      'https://picsum.photos/seed/carry-wide/600/400',
-      'https://picsum.photos/seed/carry-cargo/600/400'
+      'carry-flat.jpg',
+      'carry-wide.jpg',
+      'carry-cargo.jpg'
     ],
     variants: [
       { name: 'FD PS AC', price: 189000000 },
@@ -125,11 +125,11 @@ const products = [
     category: 'passenger',
     tagline: 'Legendary 4x4',
     description: 'Ikon off-road legendaris yang kembali dengan desain retro-modern. Tersedia 5 Door untuk kebutuhan keluarga petualang.',
-    image: 'https://picsum.photos/seed/suzuki-jimny-5door/600/400',
+    image: 'jimny.jpg',
     gallery: [
-      'https://picsum.photos/seed/jimny-front/600/400',
-      'https://picsum.photos/seed/jimny-offroad/600/400',
-      'https://picsum.photos/seed/jimny-interior/600/400'
+      'jimny-front.jpg',
+      'jimny-offroad.jpg',
+      'jimny-interior.jpg'
     ],
     variants: [
       { name: '5 Door AT', price: 418000000 },
@@ -164,11 +164,11 @@ const products = [
     category: 'passenger',
     tagline: 'SUV Hybrid Premium',
     description: 'SUV premium dengan teknologi ALLGRIP intelligent AWD dan Smart Hybrid. Desain mewah, berkendara nyaman di segala medan.',
-    image: 'https://picsum.photos/seed/grand-vitara-suv/600/400',
+    image: 'grand-vitara.jpg',
     gallery: [
-      'https://picsum.photos/seed/gv-front/600/400',
-      'https://picsum.photos/seed/gv-side/600/400',
-      'https://picsum.photos/seed/gv-interior/600/400'
+      'grand-vitara-front.jpg',
+      'grand-vitara-side.jpg',
+      'grand-vitara-interior.jpg'
     ],
     variants: [
       { name: 'Alpha AT AWD', price: 395000000 },
@@ -203,11 +203,11 @@ const products = [
     category: 'passenger',
     tagline: 'City Car Irit & Praktis',
     description: 'City car compact dengan ground clearance tinggi, irit BBM, dan harga terjangkau. Pilihan tepat untuk mobilitas harian di kota.',
-    image: 'https://picsum.photos/seed/suzuki-spresso-city/600/400',
+    image: 'spresso.jpg',
     gallery: [
-      'https://picsum.photos/seed/spresso-front/600/400',
-      'https://picsum.photos/seed/spresso-side/600/400',
-      'https://picsum.photos/seed/spresso-dash/600/400'
+      'spresso-front.jpg',
+      'spresso-side.jpg',
+      'spresso-dash.jpg'
     ],
     variants: [
       { name: 'GX AGS', price: 178000000 },
@@ -242,11 +242,11 @@ const products = [
     category: 'passenger',
     tagline: 'Crossover Compact Stylish',
     description: 'Crossover compact dengan desain futuristik, fitur canggih, dan berkendara menyenangkan. Cocok untuk generasi muda yang berani tampil beda.',
-    image: 'https://picsum.photos/seed/suzuki-fronx-cross/600/400',
+    image: 'fronx.jpg',
     gallery: [
-      'https://picsum.photos/seed/fronx-front/600/400',
-      'https://picsum.photos/seed/fronx-profile/600/400',
-      'https://picsum.photos/seed/fronx-cabin/600/400'
+      'fronx-front.jpg',
+      'fronx-profile.jpg',
+      'fronx-cabin.jpg'
     ],
     variants: [
       { name: 'RX AT Turbo', price: 328000000 },
@@ -282,11 +282,11 @@ const products = [
     category: 'passenger',
     tagline: 'Premium Hatchback',
     description: 'Hatchback premium dengan kabin lega, fitur keselamatan lengkap, dan desain sporty. Ideal untuk profesional muda di perkotaan.',
-    image: 'https://picsum.photos/seed/suzuki-baleno-hatch/600/400',
+    image: 'baleno.jpg',
     gallery: [
-      'https://picsum.photos/seed/baleno-front/600/400',
-      'https://picsum.photos/seed/baleno-rear/600/400',
-      'https://picsum.photos/seed/baleno-interior/600/400'
+      'baleno-front.jpg',
+      'baleno-rear.jpg',
+      'baleno-interior.jpg'
     ],
     variants: [
       { name: 'Alpha AT', price: 252000000 },
@@ -321,11 +321,11 @@ const products = [
     category: 'passenger',
     tagline: 'Urban Mini SUV',
     description: 'Mini SUV bergaya unik dan sporty untuk mobilitas perkotaan. Desain ikonik, parkir mudah, dan fitur lengkap di kelasnya.',
-    image: 'https://picsum.photos/seed/suzuki-ignis-mini/600/400',
+    image: 'ignis.jpg',
     gallery: [
-      'https://picsum.photos/seed/ignis-front/600/400',
-      'https://picsum.photos/seed/ignis-side/600/400',
-      'https://picsum.photos/seed/ignis-interior/600/400'
+      'ignis-front.jpg',
+      'ignis-side.jpg',
+      'ignis-interior.jpg'
     ],
     variants: [
       { name: 'GX AGS', price: 199000000 },
@@ -361,11 +361,11 @@ const products = [
     category: 'commercial',
     tagline: 'Pick Up Extra Besar',
     description: 'Pick up dengan bak terluas di kelasnya, mampu angkut barang lebih banyak. Solusi armada niaga untuk bisnis skala besar.',
-    image: 'https://picsum.photos/seed/suzuki-mega-carry/600/400',
+    image: 'mega-carry.jpg',
     gallery: [
-      'https://picsum.photos/seed/megacarry-front/600/400',
-      'https://picsum.photos/seed/megacarry-deck/600/400',
-      'https://picsum.photos/seed/megacarry-load/600/400'
+      'mega-carry-front.jpg',
+      'mega-carry-deck.jpg',
+      'mega-carry-load.jpg'
     ],
     variants: [
       { name: 'Extra Long Wide Deck PS', price: 203000000 },
@@ -393,14 +393,14 @@ const products = [
 
 // ================= DATA SERAH TERIMA =================
 const deliveryPhotos = [
-  { src: 'https://picsum.photos/seed/delivery-xl7-1/600/450', caption: 'Serah Terima Suzuki XL7 Alpha AT' },
-  { src: 'https://picsum.photos/seed/delivery-ertiga-2/600/450', caption: 'Serah Terima Suzuki Ertiga GX Hybrid' },
-  { src: 'https://picsum.photos/seed/delivery-carry-3/600/450', caption: 'Serah Terima Suzuki Carry Wide Deck' },
-  { src: 'https://picsum.photos/seed/delivery-jimny-4/600/450', caption: 'Serah Terima Suzuki Jimny 5 Door' },
-  { src: 'https://picsum.photos/seed/delivery-gv-5/600/450', caption: 'Serah Terima Grand Vitara Alpha' },
-  { src: 'https://picsum.photos/seed/delivery-spresso-6/600/450', caption: 'Serah Terima S-Presso GX AGS' },
-  { src: 'https://picsum.photos/seed/delivery-fronx-7/600/450', caption: 'Serah Terima Suzuki Fronx RX Turbo' },
-  { src: 'https://picsum.photos/seed/delivery-baleno-8/600/450', caption: 'Serah Terima Suzuki Baleno Alpha AT' }
+  { src: 'delivery-xl7.jpg', caption: 'Serah Terima Suzuki XL7 Alpha AT' },
+  { src: 'delivery-ertiga.jpg', caption: 'Serah Terima Suzuki Ertiga GX Hybrid' },
+  { src: 'delivery-carry.jpg', caption: 'Serah Terima Suzuki Carry Wide Deck' },
+  { src: 'delivery-jimny.jpg', caption: 'Serah Terima Suzuki Jimny 5 Door' },
+  { src: 'delivery-grand-vitara.jpg', caption: 'Serah Terima Grand Vitara Alpha' },
+  { src: 'delivery-spresso.jpg', caption: 'Serah Terima S-Presso GX AGS' },
+  { src: 'delivery-fronx.jpg', caption: 'Serah Terima Suzuki Fronx RX Turbo' },
+  { src: 'delivery-baleno.jpg', caption: 'Serah Terima Suzuki Baleno Alpha AT' }
 ];
 
 // ================= VARIABEL GLOBAL =================
@@ -957,7 +957,7 @@ function initContactForm() {
     }
 
     // Kirim via WhatsApp
-    var waText = 'Halo Sales Suzuki NJS Cimahi Bandung,\n\n';
+    var waText = 'Halo Sales Suzuki Naripan Bandung,\n\n';
     waText += 'Nama: ' + name + '\n';
     waText += 'No. HP: ' + phone + '\n';
     if (email) waText += 'Email: ' + email + '\n';
@@ -1090,7 +1090,7 @@ function initVideoFallback() {
     video.style.display = 'none';
     var wrap = video.closest('.hero-video-wrap');
     if (wrap) {
-      wrap.style.background = 'linear-gradient(135deg, #060A13 0%, #002E6B 50%, #060A13 100%)';
+      wrap.style.background = 'linear-gradient(135deg, #ffffff 0%, #f0f3f7 50%, #ffffff 100%)';
     }
   });
 
@@ -1101,7 +1101,7 @@ function initVideoFallback() {
         video.style.display = 'none';
         var wrap = video.closest('.hero-video-wrap');
         if (wrap) {
-          wrap.style.background = 'linear-gradient(135deg, #060A13 0%, #002E6B 50%, #060A13 100%)';
+          wrap.style.background = 'linear-gradient(135deg, #ffffff 0%, #f0f3f7 50%, #ffffff 100%)';
         }
       }
     }, 2000);
@@ -1121,7 +1121,7 @@ function checkDistance() {
     function (position) {
       var userLat = position.coords.latitude;
       var userLng = position.coords.longitude;
-           var dealerLat = -6.9208096;
+      var dealerLat = -6.9208096;
       var dealerLng = 107.6157034;
 
       // Hitung jarak (Haversine formula)
@@ -1139,7 +1139,7 @@ function checkDistance() {
         : distance.toFixed(1) + ' km';
 
       document.getElementById('distance-result').textContent =
-        'Jarak Anda ke Dealer Suzuki NJS Cimahi: sekitar ' + distText + '.';
+        'Jarak Anda ke Suzuki Naripan Bandung: sekitar ' + distText + '.';
 
       // Tampilkan tombol navigasi
       var navBtn = document.getElementById('nav-button');

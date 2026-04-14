@@ -963,7 +963,7 @@ function initContactForm() {
     if (email) waText += 'Email: ' + email + '\n';
     waText += '\nPesan: ' + message;
 
-    var waUrl = 'https://wa.me/628978426860?text=' + encodeURIComponent(waText);
+    var waUrl = 'https://wa.me/6285724887779?text=' + encodeURIComponent(waText);
     window.open(waUrl, '_blank');
   });
 }
@@ -1121,8 +1121,8 @@ function checkDistance() {
     function (position) {
       var userLat = position.coords.latitude;
       var userLng = position.coords.longitude;
-      var dealerLat = -6.879;
-      var dealerLng = 107.541;
+           var dealerLat = -6.9208096;
+      var dealerLng = 107.6157034;
 
       // Hitung jarak (Haversine formula)
       var R = 6371;

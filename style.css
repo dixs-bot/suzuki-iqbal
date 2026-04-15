@@ -2034,24 +2034,23 @@ ul { list-style: none; }
   position: fixed;
   bottom: 96px;
   right: 28px;
+  width: 58px;
+  height: 58px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 20px;
+  justify-content: center;
   background: var(--red);
-  color: #fff;
   border: none;
-  border-radius: 60px;
+  border-radius: 50%;
   z-index: 901;
   box-shadow: 0 4px 16px rgba(227, 6, 19, 0.35);
   transition: all var(--transition);
   cursor: pointer;
   animation: tdFloat 3s ease-in-out infinite;
-  white-space: nowrap;
 }
 
 .td-float:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
   box-shadow: 0 6px 24px rgba(227, 6, 19, 0.5);
 }
 
@@ -2078,6 +2077,7 @@ ul { list-style: none; }
   object-fit: contain;
   border-radius: 8px;
 }
+
 /* ================= TEST DRIVE POPUP ================= */
 .td-overlay {
   position: fixed;
@@ -2281,21 +2281,14 @@ ul { list-style: none; }
 }
 
 @media (max-width: 480px) {
-  .td-float-text {
-    display: none;
-  }
-
   .td-float {
-    bottom: 78px;
+    bottom: 82px;
     right: 16px;
-    width: 50px;
-    height: 50px;
-    padding: 0;
-    justify-content: center;
-    border-radius: 50%;
+    width: 52px;
+    height: 52px;
   }
 
-  .td-float svg {
+  .td-float-icon {
     width: 24px;
     height: 24px;
   }

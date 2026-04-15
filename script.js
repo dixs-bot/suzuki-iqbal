@@ -17,9 +17,16 @@ const products = [
       'xl7-interior.jpg'
     ],
     variants: [
-      { name: 'Alpha AT', price: 315000000 },
-      { name: 'Beta AT', price: 300000000 },
-      { name: 'Zeta MT', price: 278000000 }
+      { name: 'XL7 Zeta MT', price: 271800000 },
+      { name: 'XL7 Zeta AT', price: 282800000 },
+      { name: 'XL7 Beta MT Hybrid', price: 299300000 },
+      { name: 'XL7 Beta AT Hybrid', price: 310300000 },
+      { name: 'XL7 Alpha MT Hybrid', price: 310300000 },
+      { name: 'XL7 Alpha MT Hybrid 2 Tone', price: 312300000 },
+      { name: 'XL7 Alpha AT Hybrid', price: 321800000 },
+      { name: 'XL7 Alpha AT Hybrid 2 Tone', price: 323800000 },
+      { name: 'XL7 Alpha AT Hybrid Kuro', price: 325800000 },
+      { name: 'XL7 Alpha AT Hybrid 2 Tone Kuro', price: 327800000 }
     ],
     colors: [
       { name: 'Pearl White', hex: '#F5F5F0' },
@@ -56,9 +63,17 @@ const products = [
       'ertiga-cabin.jpg'
     ],
     variants: [
-      { name: 'GX AT Hybrid', price: 272000000 },
-      { name: 'GX MT Hybrid', price: 260000000 },
-      { name: 'GL MT Hybrid', price: 246000000 }
+      { name: 'All New Ertiga GA', price: 241750000 },
+      { name: 'All New Ertiga MC GL MT', price: 265350000 },
+      { name: 'All New Ertiga MC GL AT', price: 276400000 },
+      { name: 'All New Ertiga MC GX MT', price: 282000000 },
+      { name: 'All New Ertiga MC GX AT', price: 293000000 },
+      { name: 'All New Ertiga Cruise MT', price: 294800000 },
+      { name: 'All New Ertiga Cruise MT 2 Tone', price: 296800000 },
+      { name: 'All New Ertiga Cruise AT', price: 305700000 },
+      { name: 'All New Ertiga Cruise AT 2 Tone', price: 307700000 },
+      { name: 'All New Ertiga MC GL MT (2026)', price: 266900000 },
+      { name: 'All New Ertiga MC GL AT (2026)', price: 277900000 }
     ],
     colors: [
       { name: 'Pearl White', hex: '#F5F5F0' },
@@ -95,10 +110,10 @@ const products = [
       'carry-cargo.jpg'
     ],
     variants: [
-      { name: 'FD PS AC', price: 189000000 },
-      { name: 'Wide Deck PS AC', price: 195000000 },
-      { name: 'Flat Deck', price: 172000000 },
-      { name: 'Wide Deck', price: 178000000 }
+      { name: 'New Carry PU FD', price: 178200000 },
+      { name: 'New Carry PU FD AC PS', price: 186200000 },
+      { name: 'New Carry PU WD', price: 179300000 },
+      { name: 'New Carry PU WD AC PS', price: 187100000 }
     ],
     colors: [
       { name: 'Super White', hex: '#F5F5F0' },
@@ -124,7 +139,7 @@ const products = [
     name: 'Suzuki Jimny',
     category: 'passenger',
     tagline: 'Legendary 4x4',
-    description: 'Ikon off-road legendaris yang kembali dengan desain retro-modern. Tersedia 5 Door untuk kebutuhan keluarga petualang.',
+    description: 'Ikon off-road legendaris yang kembali dengan desain retro-modern. Tersedia 3 Door dan 5 Door untuk petualang sejati.',
     image: 'jimny.jpg',
     gallery: [
       'jimny-front.jpg',
@@ -132,8 +147,14 @@ const products = [
       'jimny-interior.jpg'
     ],
     variants: [
-      { name: '5 Door AT', price: 418000000 },
-      { name: '5 Door MT', price: 405000000 }
+      { name: 'Jimny 3 Door MT', price: 511550000 },
+      { name: 'Jimny 3 Door AT', price: 524000000 },
+      { name: 'Jimny 3 Door MT 2 Tone', price: 514850000 },
+      { name: 'Jimny 3 Door AT 2 Tone', price: 527300000 },
+      { name: 'Jimny 5 Door MT', price: 496100000 },
+      { name: 'Jimny 5 Door AT', price: 508700000 },
+      { name: 'Jimny 5 Door MT 2 Tone', price: 499350000 },
+      { name: 'Jimny 5 Door AT 2 Tone', price: 511900000 }
     ],
     colors: [
       { name: 'Kinetic Yellow', hex: '#E8D44D' },
@@ -143,7 +164,7 @@ const products = [
       { name: 'Sizzling Red', hex: '#C41E3A' },
       { name: 'Black', hex: '#1A1A1A' }
     ],
-    briefSpecs: ['4WD Ladder Frame', '5 Door', 'Part-time 4WD', 'Differential Lock', 'Retro Modern'],
+    briefSpecs: ['4WD Ladder Frame', '3 & 5 Door', 'Part-time 4WD', 'Differential Lock', 'Retro Modern'],
     specs: {
       'Mesin': 'K15B 1.5L',
       'Tenaga': '102 HP @ 6.000 rpm',
@@ -171,9 +192,8 @@ const products = [
       'grand-vitara-interior.jpg'
     ],
     variants: [
-      { name: 'Alpha AT AWD', price: 395000000 },
-      { name: 'Beta AT', price: 368000000 },
-      { name: 'Zeta AT', price: 345000000 }
+      { name: 'Grand Vitara GX MC AT', price: 421900000 },
+      { name: 'Grand Vitara GX MC AT 2 Tone', price: 424900000 }
     ],
     colors: [
       { name: 'Pearl White', hex: '#F5F5F0' },
@@ -210,9 +230,8 @@ const products = [
       'spresso-dash.jpg'
     ],
     variants: [
-      { name: 'GX AGS', price: 178000000 },
-      { name: 'GX MT', price: 167000000 },
-      { name: 'GL MT', price: 154000000 }
+      { name: 'S-Presso MT', price: 176600000 },
+      { name: 'S-Presso AT', price: 186600000 }
     ],
     colors: [
       { name: 'Sapphire Blue', hex: '#1E3A5F' },
@@ -221,12 +240,12 @@ const products = [
       { name: 'Fire Red', hex: '#C41E3A' },
       { name: 'Black', hex: '#1A1A1A' }
     ],
-    briefSpecs: ['Ground Clearance 180mm', 'Irit BBM', 'AGS (Auto Gear Shift)', 'Compact', 'Harga Terjangkau'],
+    briefSpecs: ['Ground Clearance 180mm', 'Irit BBM', 'AT Available', 'Compact', 'Harga Terjangkau'],
     specs: {
       'Mesin': 'K10B 1.0L',
       'Tenaga': '66 HP @ 5.500 rpm',
       'Torsi': '90 Nm @ 3.500 rpm',
-      'Transmisi': 'AGS / 5MT',
+      'Transmisi': 'AT / 5MT',
       'Bahan Bakar': 'Bensin RON 90+',
       'Kapasitas Tangki': '27 Liter',
       'Dimensi (P x L x T)': '3.565 x 1.520 x 1.565 mm',
@@ -249,9 +268,14 @@ const products = [
       'fronx-cabin.jpg'
     ],
     variants: [
-      { name: 'RX AT Turbo', price: 328000000 },
-      { name: 'GX AT Turbo', price: 305000000 },
-      { name: 'GX MT', price: 278000000 }
+      { name: 'Fronx GL MT', price: 264300000 },
+      { name: 'Fronx GL AT', price: 275300000 },
+      { name: 'Fronx GX MT', price: 286700000 },
+      { name: 'Fronx GX AT', price: 304900000 },
+      { name: 'Fronx SGX AT', price: 331000000 },
+      { name: 'Fronx SGX AT (Ivory & Putih)', price: 331000000 },
+      { name: 'Fronx SGX AT 2 Tone', price: 333000000 },
+      { name: 'Fronx GL AT (2026)', price: 277300000 }
     ],
     colors: [
       { name: 'Pearl White', hex: '#F5F5F0' },
@@ -274,6 +298,45 @@ const products = [
       'Kapasitas Penumpang': '5 Orang',
       'Keselamatan': '6 Airbag, ABS, EBD, ESP',
       'Hiburan': '9" Touchscreen, Wireless Charging'
+    }
+  },
+  {
+    id: 'apv',
+    name: 'Suzuki APV',
+    category: 'passenger',
+    tagline: 'MPV Niaga & Keluarga Tangguh',
+    description: 'MPV legendaris yang tangguh untuk segala kebutuhan. Tersedia varian Blind Van untuk niaga dan varian penumpang untuk keluarga besar.',
+    image: 'apv.jpg',
+    gallery: [
+      'apv-front.jpg',
+      'apv-side.jpg',
+      'apv-interior.jpg'
+    ],
+    variants: [
+      { name: 'APV Blind Van', price: 187300000 },
+      { name: 'APV GE PS MT AB', price: 229300000 },
+      { name: 'APV GL MT AB', price: 237800000 },
+      { name: 'APV GX MT AB', price: 251800000 },
+      { name: 'APV SGX MT AB', price: 255300000 }
+    ],
+    colors: [
+      { name: 'Silky Silver', hex: '#B8B8B8' },
+      { name: 'Super White', hex: '#F5F5F0' },
+      { name: 'Black', hex: '#1A1A1A' },
+      { name: 'Blue', hex: '#1E3A5F' }
+    ],
+    briefSpecs: ['Kabin Luas', 'Mesin Bandel', 'Blind Van Tersedia', 'Harga Terjangkau', 'AC Double Blower'],
+    specs: {
+      'Mesin': 'G15A 1.5L',
+      'Tenaga': '104 HP @ 6.000 rpm',
+      'Torsi': '134 Nm @ 3.000 rpm',
+      'Transmisi': '5MT',
+      'Bahan Bakar': 'Bensin RON 90+',
+      'Kapasitas Tangki': '43 Liter',
+      'Dimensi (P x L x T)': '4.150 x 1.655 x 1.855 mm',
+      'Wheelbase': '2.625 mm',
+      'Kapasitas Penumpang': '8 Orang',
+      'Fitur': 'AC Double Blower, Power Window'
     }
   },
   {
@@ -390,19 +453,6 @@ const products = [
     }
   }
 ];
-
-// ================= DATA SERAH TERIMA =================
-const deliveryPhotos = [
-  { src: 'delivery-xl7.jpg', caption: 'Serah Terima Suzuki XL7 Alpha AT' },
-  { src: 'delivery-ertiga.jpg', caption: 'Serah Terima Suzuki Ertiga GX Hybrid' },
-  { src: 'delivery-carry.jpg', caption: 'Serah Terima Suzuki Carry Wide Deck' },
-  { src: 'delivery-jimny.jpg', caption: 'Serah Terima Suzuki Jimny 5 Door' },
-  { src: 'delivery-grand-vitara.jpg', caption: 'Serah Terima Grand Vitara Alpha' },
-  { src: 'delivery-spresso.jpg', caption: 'Serah Terima S-Presso GX AGS' },
-  { src: 'delivery-fronx.jpg', caption: 'Serah Terima Suzuki Fronx RX Turbo' },
-  { src: 'delivery-baleno.jpg', caption: 'Serah Terima Suzuki Baleno Alpha AT' }
-];
-
 // ================= VARIABEL GLOBAL =================
 let currentFilter = 'all';
 let currentProduct = null;

@@ -367,7 +367,7 @@ const products = [
     category: 'passenger',
     tagline: 'Urban Mini SUV',
     description: 'Mini SUV bergaya unik dan sporty untuk mobilitas perkotaan. Desain ikonik, parkir mudah, dan fitur lengkap di kelasnya.',
-    image: 'ignis.jpg',
+    image: 'ignis.png',
     gallery: [
       'ignis-front.jpg',
     ],

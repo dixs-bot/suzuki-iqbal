@@ -129,20 +129,55 @@ const products = [
     }
   },
   {
-    id: 'jimny',
-    name: 'Suzuki Jimny',
+    id: 'jimny-3door',
+    name: 'Suzuki Jimny 3 Door',
     category: 'passenger',
-    tagline: 'Legendary 4x4',
-    description: 'Ikon off-road legendaris yang kembali dengan desain retro-modern. Tersedia 3 Door dan 5 Door untuk petualang sejati.',
-    image: 'jimny5.png',
+    tagline: 'Legendary 4x4 Compact',
+    description: 'Ikon off-road legendaris dengan desain retro-modern. Jimny 3 Door yang compact dan agile, siap taklukkan segala medan.',
+    image: 'jimny3.png',
     gallery: [
-      'jimny1.png',
+      'jimny3-1.png',
     ],
     variants: [
       { name: 'Jimny 3 Door MT', price: 511550000 },
       { name: 'Jimny 3 Door AT', price: 524000000 },
       { name: 'Jimny 3 Door MT 2 Tone', price: 514850000 },
-      { name: 'Jimny 3 Door AT 2 Tone', price: 527300000 },
+      { name: 'Jimny 3 Door AT 2 Tone', price: 527300000 }
+    ],
+    colors: [
+      { name: 'Kinetic Yellow', hex: '#E8D44D' },
+      { name: 'Jungle Green', hex: '#2E5A2E' },
+      { name: 'Pearl White', hex: '#F5F5F0' },
+      { name: 'Brisk Blue', hex: '#2255AA' },
+      { name: 'Sizzling Red', hex: '#C41E3A' },
+      { name: 'Black', hex: '#1A1A1A' }
+    ],
+    briefSpecs: ['4WD Ladder Frame', '3 Door', 'Part-time 4WD', 'Differential Lock', 'Retro Modern'],
+    specs: {
+      'Mesin': 'K15B 1.5L',
+      'Tenaga': '102 HP @ 6.000 rpm',
+      'Torsi': '130 Nm @ 4.000 rpm',
+      'Transmisi': '4AT / 5MT',
+      'Penggerak': 'Part-time 4WD',
+      'Bahan Bakar': 'Bensin RON 90+',
+      'Dimensi (P x L x T)': '3.645 x 1.645 x 1.720 mm',
+      'Wheelbase': '2.250 mm',
+      'Ground Clearance': '210 mm',
+      'Kapasitas Penumpang': '4 Orang',
+      'Off-Road': '4H, 4L, Diff Lock'
+    }
+  },
+  {
+    id: 'jimny-5door',
+    name: 'Suzuki Jimny 5 Door',
+    category: 'passenger',
+    tagline: 'Legendary 4x4 Family',
+    description: 'Jimny legendaris kini hadir dengan 5 pintu untuk kenyamanan keluarga. Tetap tangguh di segala medan dengan kapasitas penumpang lebih banyak.',
+    image: 'jimny5.png',
+    gallery: [
+      'jimny5-1.png',
+    ],
+    variants: [
       { name: 'Jimny 5 Door MT', price: 496100000 },
       { name: 'Jimny 5 Door AT', price: 508700000 },
       { name: 'Jimny 5 Door MT 2 Tone', price: 499350000 },
@@ -156,7 +191,7 @@ const products = [
       { name: 'Sizzling Red', hex: '#C41E3A' },
       { name: 'Black', hex: '#1A1A1A' }
     ],
-    briefSpecs: ['4WD Ladder Frame', '3 & 5 Door', 'Part-time 4WD', 'Differential Lock', 'Retro Modern'],
+    briefSpecs: ['4WD Ladder Frame', '5 Door', 'Part-time 4WD', 'Differential Lock', 'Keluarga Petualang'],
     specs: {
       'Mesin': 'K15B 1.5L',
       'Tenaga': '102 HP @ 6.000 rpm',
@@ -251,7 +286,7 @@ const products = [
     description: 'Crossover compact dengan desain futuristik, fitur canggih, dan berkendara menyenangkan. Cocok untuk generasi muda yang berani tampil beda.',
     image: 'fronx.png',
     gallery: [
-      'fronx1png',
+      'fronx1.png',
     ],
     variants: [
       { name: 'Fronx GL MT', price: 264300000 },
@@ -295,7 +330,6 @@ const products = [
     image: 'apv.png',
     gallery: [
       'apv1.png',
-      
     ],
     variants: [
       { name: 'APV Blind Van', price: 187300000 },
@@ -322,81 +356,6 @@ const products = [
       'Wheelbase': '2.625 mm',
       'Kapasitas Penumpang': '8 Orang',
       'Fitur': 'AC Double Blower, Power Window'
-    }
-  },
-  {
-    id: 'baleno',
-    name: 'Suzuki Baleno',
-    category: 'passenger',
-    tagline: 'Premium Hatchback',
-    description: 'Hatchback premium dengan kabin lega, fitur keselamatan lengkap, dan desain sporty. Ideal untuk profesional muda di perkotaan.',
-    image: 'BALENO.jpg',
-    gallery: [
-      'baleno1.png',
-    ],
-    variants: [
-      { name: 'Alpha AT', price: 252000000 },
-      { name: 'Beta AT', price: 237000000 },
-      { name: 'Beta MT', price: 227000000 }
-    ],
-    colors: [
-      { name: 'Pearl White', hex: '#F5F5F0' },
-      { name: 'Magma Red', hex: '#8B1A1A' },
-      { name: 'Silky Silver', hex: '#B8B8B8' },
-      { name: 'Metallic Blue', hex: '#1E3A5F' },
-      { name: 'Black', hex: '#1A1A1A' }
-    ],
-    briefSpecs: ['Kabin Lega', 'Heartect Platform', 'LED Headlamp', 'Cruise Control', '6 Airbag'],
-    specs: {
-      'Mesin': 'K15B 1.5L Dualjet',
-      'Tenaga': '104 HP @ 6.000 rpm',
-      'Torsi': '138 Nm @ 4.400 rpm',
-      'Transmisi': '4AT / 5MT',
-      'Bahan Bakar': 'Bensin RON 90+',
-      'Kapasitas Tangki': '37 Liter',
-      'Dimensi (P x L x T)': '3.995 x 1.745 x 1.510 mm',
-      'Wheelbase': '2.520 mm',
-      'Kapasitas Penumpang': '5 Orang',
-      'Keselamatan': '6 Airbag, ABS, EBD, ESP',
-      'Hiburan': '9" Touchscreen, 4 Speaker'
-    }
-  },
-  {
-    id: 'ignis',
-    name: 'Suzuki Ignis',
-    category: 'passenger',
-    tagline: 'Urban Mini SUV',
-    description: 'Mini SUV bergaya unik dan sporty untuk mobilitas perkotaan. Desain ikonik, parkir mudah, dan fitur lengkap di kelasnya.',
-    image: 'ignis.png',
-    gallery: [
-      'ignis-front.jpg',
-    ],
-    variants: [
-      { name: 'GX AGS', price: 199000000 },
-      { name: 'GX MT', price: 189000000 },
-      { name: 'GL MT', price: 175000000 }
-    ],
-    colors: [
-      { name: 'Pearl White', hex: '#F5F5F0' },
-      { name: 'Sapphire Blue', hex: '#1E3A5F' },
-      { name: 'Silky Silver', hex: '#B8B8B8' },
-      { name: 'Magma Red', hex: '#8B1A1A' },
-      { name: 'Black', hex: '#1A1A1A' },
-      { name: 'Lemon Yellow', hex: '#E8D44D' }
-    ],
-    briefSpecs: ['Desain Ikonik', 'AGS Available', 'LED DRL', 'Kompak & Lincah', 'Harga Terjangkau'],
-    specs: {
-      'Mesin': 'K12M 1.2L',
-      'Tenaga': '91 HP @ 6.000 rpm',
-      'Torsi': '118 Nm @ 4.400 rpm',
-      'Transmisi': 'AGS / 5MT',
-      'Bahan Bakar': 'Bensin RON 90+',
-      'Kapasitas Tangki': '32 Liter',
-      'Dimensi (P x L x T)': '3.700 x 1.660 x 1.595 mm',
-      'Wheelbase': '2.435 mm',
-      'Ground Clearance': '180 mm',
-      'Kapasitas Penumpang': '5 Orang',
-      'Fitur': 'Touchscreen, LED DRL, Keyless'
     }
   }
 ];

@@ -321,8 +321,7 @@ const products = [
       'Hiburan': '9" Touchscreen, Wireless Charging'
     }
   },
-  {
-     {
+   {
     id: 'apv',
     name: 'Suzuki APV',
     category: 'passenger',

@@ -363,7 +363,7 @@ const products = [
     category: 'commercial',
     tagline: 'Van Niaga Andalan',
     description: 'APV Blind Van adalah solusi niaga terpercaya untuk pengiriman barang. Kabin tertutup tanpa jendela, muat banyak barang dengan biaya operasional rendah.',
-    image: 'apv-blind-van.png',
+    image: 'blindvan.jpg',
     gallery: [
       'apv-blind-van1.png',
     ],

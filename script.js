@@ -370,8 +370,6 @@ const products = [
     image: 'ignis.jpg',
     gallery: [
       'ignis-front.jpg',
-      'ignis-side.jpg',
-      'ignis-interior.jpg'
     ],
     variants: [
       { name: 'GX AGS', price: 199000000 },
@@ -399,40 +397,6 @@ const products = [
       'Ground Clearance': '180 mm',
       'Kapasitas Penumpang': '5 Orang',
       'Fitur': 'Touchscreen, LED DRL, Keyless'
-    }
-  },
-  {
-    id: 'mega-carry',
-    name: 'Suzuki Mega Carry',
-    category: 'commercial',
-    tagline: 'Pick Up Extra Besar',
-    description: 'Pick up dengan bak terluas di kelasnya, mampu angkut barang lebih banyak. Solusi armada niaga untuk bisnis skala besar.',
-    image: 'mega-carry.jpg',
-    gallery: [
-      'mega-carry-front.jpg',
-      'mega-carry-deck.jpg',
-      'mega-carry-load.jpg'
-    ],
-    variants: [
-      { name: 'Extra Long Wide Deck PS', price: 203000000 },
-      { name: 'Wide Deck PS AC', price: 195000000 }
-    ],
-    colors: [
-      { name: 'Super White', hex: '#F5F5F0' },
-      { name: 'Silky Silver', hex: '#B8B8B8' },
-      { name: 'Black', hex: '#1A1A1A' }
-    ],
-    briefSpecs: ['Bak Terluas di Kelasnya', 'Daya Angkut Besar', 'Power Steering', 'Bak Besi', 'Niaga Andalan'],
-    specs: {
-      'Mesin': 'K15B 1.5L',
-      'Tenaga': '96 HP @ 6.000 rpm',
-      'Torsi': '135 Nm @ 4.400 rpm',
-      'Transmisi': '5MT',
-      'Bahan Bakar': 'Bensin RON 90+',
-      'Kapasitas Tangki': '42 Liter',
-      'Dimensi Bak (P x L)': 'Extra Long: 2.540 x 1.740 mm',
-      'Daya Angkut': '± 1.000 - 1.200 kg',
-      'Fitur': 'Power Steering, Bak Besi'
     }
   }
 ];

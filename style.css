@@ -2034,25 +2034,24 @@ ul { list-style: none; }
   position: fixed;
   bottom: 96px;
   right: 28px;
+  width: 58px;
+  height: 58px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 20px;
-  background: var(--red);
-  color: #fff;
+  justify-content: center;
+  background: #ffffff;
   border: none;
-  border-radius: 60px;
+  border-radius: 50%;
   z-index: 901;
-  box-shadow: 0 4px 16px rgba(227, 6, 19, 0.35);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
   transition: all var(--transition);
   cursor: pointer;
   animation: tdFloat 3s ease-in-out infinite;
-  white-space: nowrap;
 }
 
 .td-float:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 24px rgba(227, 6, 19, 0.5);
+  transform: scale(1.08);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
 }
 
 @keyframes tdFloat {
@@ -2060,10 +2059,11 @@ ul { list-style: none; }
   50% { transform: translateY(-4px); }
 }
 
-.td-float-text {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.01em;
+.td-float-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
 }
 
 /* ================= TEST DRIVE POPUP ================= */
@@ -2133,7 +2133,11 @@ ul { list-style: none; }
   margin-bottom: 28px;
 }
 
-.td-popup-header svg {
+.td-popup-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 8px;
   margin: 0 auto 12px;
 }
 
@@ -2248,16 +2252,6 @@ ul { list-style: none; }
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
-  .td-float {
-    bottom: 82px;
-    right: 16px;
-    padding: 10px 16px;
-  }
-
-  .td-float-text {
-    font-size: 12px;
-  }
-
   .td-popup {
     padding: 24px;
     margin: 16px;
@@ -2269,22 +2263,15 @@ ul { list-style: none; }
 }
 
 @media (max-width: 480px) {
-  .td-float-text {
-    display: none;
-  }
-
   .td-float {
-    bottom: 78px;
+    bottom: 82px;
     right: 16px;
-    width: 50px;
-    height: 50px;
-    padding: 0;
-    justify-content: center;
-    border-radius: 50%;
+    width: 52px;
+    height: 52px;
   }
 
-  .td-float svg {
-    width: 24px;
-    height: 24px;
+  .td-float-icon {
+    width: 36px;
+    height: 36px;
   }
 }

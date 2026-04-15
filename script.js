@@ -10,9 +10,9 @@ const products = [
     category: 'passenger',
     tagline: '7-Seater SUV Hybrid',
     description: 'SUV 7 penumpang dengan teknologi Smart Hybrid, ground clearance tinggi, dan desain maskulin. Cocok untuk keluarga aktif yang butuh kenyamanan dan efisiensi BBM.',
-    image: 'xl7.jpg',
+    image: 'xl7-kuro.png',
     gallery: [
-      'xl7-kuro.png',
+      'xl7-kuro1.png',
     ],
     variants: [
       { name: 'XL7 Zeta MT', price: 271800000 },
@@ -54,9 +54,9 @@ const products = [
     category: 'passenger',
     tagline: 'MPV Keluarga Hybrid',
     description: 'MPV keluarga terlaris dengan Smart Hybrid Technology. Irit BBM, kabin luas, dan berkarakter elegan untuk mobilitas keluarga sehari-hari.',
-    image: 'ertiga.jpg',
+    image: 'SUZUKI_ERTIGA.png',
     gallery: [
-      'SUZUKI_ERTIGA.png',
+      'SUZUKI_ERTIGA1.png',
     ],
     variants: [
       { name: 'All New Ertiga GA', price: 241750000 },
@@ -99,9 +99,9 @@ const products = [
     category: 'commercial',
     tagline: 'Raja Niaga Indonesia',
     description: 'Pick up terlaris di Indonesia dengan daya angkut maksimal, mesin bandel, dan biaya operasional rendah. Pilihan tepat untuk usaha Anda.',
-    image: 'carry.jpg',
+    image: 'carry-pu.png',
     gallery: [
-      'carry-pu.png',
+      'carry-pu1.png',
     ],
     variants: [
       { name: 'New Carry PU FD', price: 178200000 },
@@ -134,9 +134,9 @@ const products = [
     category: 'passenger',
     tagline: 'Legendary 4x4',
     description: 'Ikon off-road legendaris yang kembali dengan desain retro-modern. Tersedia 3 Door dan 5 Door untuk petualang sejati.',
-    image: 'jimny.jpg',
+    image: 'jimny5.png',
     gallery: [
-      'jimny5.png',
+      'jimny1.png',
     ],
     variants: [
       { name: 'Jimny 3 Door MT', price: 511550000 },
@@ -177,9 +177,9 @@ const products = [
     category: 'passenger',
     tagline: 'SUV Hybrid Premium',
     description: 'SUV premium dengan teknologi ALLGRIP intelligent AWD dan Smart Hybrid. Desain mewah, berkendara nyaman di segala medan.',
-    image: 'grand-vitara.jpg',
+    image: 'grand-vitara.png',
     gallery: [
-      'grand-vitara.png',
+      'grand-vitara1.png',
     ],
     variants: [
       { name: 'Grand Vitara GX MC AT', price: 421900000 },
@@ -213,9 +213,9 @@ const products = [
     category: 'passenger',
     tagline: 'City Car Irit & Praktis',
     description: 'City car compact dengan ground clearance tinggi, irit BBM, dan harga terjangkau. Pilihan tepat untuk mobilitas harian di kota.',
-    image: 'spresso.jpg',
+    image: 'spresso.png',
     gallery: [
-      'spresso.png',
+      'spresso1.png',
     ],
     variants: [
       { name: 'S-Presso MT', price: 176600000 },
@@ -249,9 +249,9 @@ const products = [
     category: 'passenger',
     tagline: 'Crossover Compact Stylish',
     description: 'Crossover compact dengan desain futuristik, fitur canggih, dan berkendara menyenangkan. Cocok untuk generasi muda yang berani tampil beda.',
-    image: 'fronx.jpg',
+    image: 'fronx.png',
     gallery: [
-      'fronx.png',
+      'fronx1png',
     ],
     variants: [
       { name: 'Fronx GL MT', price: 264300000 },
@@ -292,9 +292,9 @@ const products = [
     category: 'passenger',
     tagline: 'MPV Niaga & Keluarga Tangguh',
     description: 'MPV legendaris yang tangguh untuk segala kebutuhan. Tersedia varian Blind Van untuk niaga dan varian penumpang untuk keluarga besar.',
-    image: 'apv.jpg',
+    image: 'apv.png',
     gallery: [
-      'apv.png',
+      'apv1.png',
       
     ],
     variants: [
@@ -330,9 +330,9 @@ const products = [
     category: 'passenger',
     tagline: 'Premium Hatchback',
     description: 'Hatchback premium dengan kabin lega, fitur keselamatan lengkap, dan desain sporty. Ideal untuk profesional muda di perkotaan.',
-    image: 'baleno.jpg',
+    image: 'baleno.png',
     gallery: [
-      'baleno.png',
+      'baleno1.png',
     ],
     variants: [
       { name: 'Alpha AT', price: 252000000 },

@@ -12,9 +12,7 @@ const products = [
     description: 'SUV 7 penumpang dengan teknologi Smart Hybrid, ground clearance tinggi, dan desain maskulin. Cocok untuk keluarga aktif yang butuh kenyamanan dan efisiensi BBM.',
     image: 'xl7.jpg',
     gallery: [
-      'xl7-angle1.jpg',
-      'xl7-angle2.jpg',
-      'xl7-interior.jpg'
+      'xl7-kuro.png',
     ],
     variants: [
       { name: 'XL7 Zeta MT', price: 271800000 },
@@ -58,9 +56,7 @@ const products = [
     description: 'MPV keluarga terlaris dengan Smart Hybrid Technology. Irit BBM, kabin luas, dan berkarakter elegan untuk mobilitas keluarga sehari-hari.',
     image: 'ertiga.jpg',
     gallery: [
-      'ertiga-side.jpg',
-      'ertiga-rear.jpg',
-      'ertiga-cabin.jpg'
+      'SUZUKI_ERTIGA.png',
     ],
     variants: [
       { name: 'All New Ertiga GA', price: 241750000 },
@@ -105,9 +101,7 @@ const products = [
     description: 'Pick up terlaris di Indonesia dengan daya angkut maksimal, mesin bandel, dan biaya operasional rendah. Pilihan tepat untuk usaha Anda.',
     image: 'carry.jpg',
     gallery: [
-      'carry-flat.jpg',
-      'carry-wide.jpg',
-      'carry-cargo.jpg'
+      'carry-pu.png',
     ],
     variants: [
       { name: 'New Carry PU FD', price: 178200000 },
@@ -142,9 +136,7 @@ const products = [
     description: 'Ikon off-road legendaris yang kembali dengan desain retro-modern. Tersedia 3 Door dan 5 Door untuk petualang sejati.',
     image: 'jimny.jpg',
     gallery: [
-      'jimny-front.jpg',
-      'jimny-offroad.jpg',
-      'jimny-interior.jpg'
+      'jimny5.png',
     ],
     variants: [
       { name: 'Jimny 3 Door MT', price: 511550000 },
@@ -187,9 +179,7 @@ const products = [
     description: 'SUV premium dengan teknologi ALLGRIP intelligent AWD dan Smart Hybrid. Desain mewah, berkendara nyaman di segala medan.',
     image: 'grand-vitara.jpg',
     gallery: [
-      'grand-vitara-front.jpg',
-      'grand-vitara-side.jpg',
-      'grand-vitara-interior.jpg'
+      'grand-vitara.png',
     ],
     variants: [
       { name: 'Grand Vitara GX MC AT', price: 421900000 },
@@ -225,9 +215,7 @@ const products = [
     description: 'City car compact dengan ground clearance tinggi, irit BBM, dan harga terjangkau. Pilihan tepat untuk mobilitas harian di kota.',
     image: 'spresso.jpg',
     gallery: [
-      'spresso-front.jpg',
-      'spresso-side.jpg',
-      'spresso-dash.jpg'
+      'spresso.png',
     ],
     variants: [
       { name: 'S-Presso MT', price: 176600000 },
@@ -263,9 +251,7 @@ const products = [
     description: 'Crossover compact dengan desain futuristik, fitur canggih, dan berkendara menyenangkan. Cocok untuk generasi muda yang berani tampil beda.',
     image: 'fronx.jpg',
     gallery: [
-      'fronx-front.jpg',
-      'fronx-profile.jpg',
-      'fronx-cabin.jpg'
+      'fronx.png',
     ],
     variants: [
       { name: 'Fronx GL MT', price: 264300000 },
@@ -308,9 +294,8 @@ const products = [
     description: 'MPV legendaris yang tangguh untuk segala kebutuhan. Tersedia varian Blind Van untuk niaga dan varian penumpang untuk keluarga besar.',
     image: 'apv.jpg',
     gallery: [
-      'apv-front.jpg',
-      'apv-side.jpg',
-      'apv-interior.jpg'
+      'apv.png',
+      
     ],
     variants: [
       { name: 'APV Blind Van', price: 187300000 },
@@ -347,9 +332,7 @@ const products = [
     description: 'Hatchback premium dengan kabin lega, fitur keselamatan lengkap, dan desain sporty. Ideal untuk profesional muda di perkotaan.',
     image: 'baleno.jpg',
     gallery: [
-      'baleno-front.jpg',
-      'baleno-rear.jpg',
-      'baleno-interior.jpg'
+      'baleno.png',
     ],
     variants: [
       { name: 'Alpha AT', price: 252000000 },

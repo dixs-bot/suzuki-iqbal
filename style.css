@@ -2039,11 +2039,11 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--red);
+  background: #ffffff;
   border: none;
   border-radius: 50%;
   z-index: 901;
-  box-shadow: 0 4px 16px rgba(227, 6, 19, 0.35);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
   transition: all var(--transition);
   cursor: pointer;
   animation: tdFloat 3s ease-in-out infinite;
@@ -2051,7 +2051,7 @@ ul { list-style: none; }
 
 .td-float:hover {
   transform: scale(1.08);
-  box-shadow: 0 6px 24px rgba(227, 6, 19, 0.5);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
 }
 
 @keyframes tdFloat {
@@ -2060,8 +2060,8 @@ ul { list-style: none; }
 }
 
 .td-float-icon {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   object-fit: contain;
 }
 
@@ -2283,7 +2283,7 @@ ul { list-style: none; }
   }
 
   .td-float-icon {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
   }
 }

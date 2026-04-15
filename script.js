@@ -322,17 +322,17 @@ const products = [
     }
   },
   {
+     {
     id: 'apv',
     name: 'Suzuki APV',
     category: 'passenger',
-    tagline: 'MPV Niaga & Keluarga Tangguh',
-    description: 'MPV legendaris yang tangguh untuk segala kebutuhan. Tersedia varian Blind Van untuk niaga dan varian penumpang untuk keluarga besar.',
+    tagline: 'MPV Keluarga Tangguh',
+    description: 'MPV legendaris yang tangguh untuk segala kebutuhan keluarga. Kabin luas, mesin bandel, dan harga terjangkau untuk mobilitas harian.',
     image: 'apv.png',
     gallery: [
       'apv1.png',
     ],
     variants: [
-      { name: 'APV Blind Van', price: 187300000 },
       { name: 'APV GE PS MT AB', price: 229300000 },
       { name: 'APV GL MT AB', price: 237800000 },
       { name: 'APV GX MT AB', price: 251800000 },
@@ -344,7 +344,7 @@ const products = [
       { name: 'Black', hex: '#1A1A1A' },
       { name: 'Blue', hex: '#1E3A5F' }
     ],
-    briefSpecs: ['Kabin Luas', 'Mesin Bandel', 'Blind Van Tersedia', 'Harga Terjangkau', 'AC Double Blower'],
+    briefSpecs: ['Kabin Luas', 'Mesin Bandel', '8 Penumpang', 'Harga Terjangkau', 'AC Double Blower'],
     specs: {
       'Mesin': 'G15A 1.5L',
       'Tenaga': '104 HP @ 6.000 rpm',
@@ -357,7 +357,38 @@ const products = [
       'Kapasitas Penumpang': '8 Orang',
       'Fitur': 'AC Double Blower, Power Window'
     }
-  }
+  },
+  {
+    id: 'apv-blind-van',
+    name: 'Suzuki APV Blind Van',
+    category: 'commercial',
+    tagline: 'Van Niaga Andalan',
+    description: 'APV Blind Van adalah solusi niaga terpercaya untuk pengiriman barang. Kabin tertutup tanpa jendela, muat banyak barang dengan biaya operasional rendah.',
+    image: 'apv-blind-van.png',
+    gallery: [
+      'apv-blind-van1.png',
+    ],
+    variants: [
+      { name: 'APV Blind Van', price: 187300000 }
+    ],
+    colors: [
+      { name: 'Super White', hex: '#F5F5F0' },
+      { name: 'Silky Silver', hex: '#B8B8B8' }
+    ],
+    briefSpecs: ['Kabin Tertutup', 'Daya Angkut Besar', 'Biaya Operasional Rendah', 'Mesin Bandel', 'Harga Terjangkau'],
+    specs: {
+      'Mesin': 'G15A 1.5L',
+      'Tenaga': '104 HP @ 6.000 rpm',
+      'Torsi': '134 Nm @ 3.000 rpm',
+      'Transmisi': '5MT',
+      'Bahan Bakar': 'Bensin RON 90+',
+      'Kapasitas Tangki': '43 Liter',
+      'Dimensi (P x L x T)': '4.150 x 1.655 x 1.855 mm',
+      'Wheelbase': '2.625 mm',
+      'Tipe': 'Blind Van (Tanpa Jendela Samping)',
+      'Fitur': 'Kabin Tertutup, Rak Muatan'
+    }
+  },
 ];
 
 // ================= DATA SERAH TERIMA =================

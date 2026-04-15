@@ -134,7 +134,7 @@ const products = [
     category: 'passenger',
     tagline: 'Legendary 4x4 Compact',
     description: 'Ikon off-road legendaris dengan desain retro-modern. Jimny 3 Door yang compact dan agile, siap taklukkan segala medan.',
-    image: 'jimny3.png',
+    image: 'jimny1.png',
     gallery: [
       'jimny3-1.png',
     ],

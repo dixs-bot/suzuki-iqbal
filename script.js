@@ -357,39 +357,37 @@ const products = [
       'Fitur': 'AC Double Blower, Power Window'
     }
   },
+
+  // PRODUK 2 (KOMERSIL)
   {
-    id: 'apv-blind-van',
-    name: 'Suzuki APV Blind Van',
-    category: 'commercial',
+    name: 'APV Blind Van',
     tagline: 'Van Niaga Andalan',
-    description: 'APV Blind Van adalah solusi niaga terpercaya untuk pengiriman barang. Kabin tertutup tanpa jendela, muat banyak barang dengan biaya operasional rendah.',
+    description: 'APV Blind Van adalah solusi niaga terpercaya...',
     image: 'apv-blind-van.png',
+
     gallery: [
-      'apv-blind-van1.png',
+      'apv-blind-van1.png'
     ],
+
     variants: [
       { name: 'APV Blind Van', price: 187300000 }
     ],
+
     colors: [
       { name: 'Super White', hex: '#F5F5F0' },
       { name: 'Silky Silver', hex: '#B8B8B8' }
     ],
-    briefSpecs: ['Kabin Tertutup', 'Daya Angkut Besar', 'Biaya Operasional Rendah', 'Mesin Bandel', 'Harga Terjangkau'],
+
+    briefSpecs: ['Kabin Tertutup', 'Daya Angkut Besar'],
+
     specs: {
       'Mesin': 'G15A 1.5L',
       'Tenaga': '104 HP @ 6.000 rpm',
-      'Torsi': '134 Nm @ 3.000 rpm',
-      'Transmisi': '5MT',
-      'Bahan Bakar': 'Bensin RON 90+',
-      'Kapasitas Tangki': '43 Liter',
-      'Dimensi (P x L x T)': '4.150 x 1.655 x 1.855 mm',
-      'Wheelbase': '2.625 mm',
-      'Tipe': 'Blind Van (Tanpa Jendela Samping)',
-      'Fitur': 'Kabin Tertutup, Rak Muatan'
+      'Torsi': '134 Nm @ 3.000 rpm'
     }
   }
-];
 
+];
 
 // ================= DATA SERAH TERIMA =================
 const deliveryPhotos = [

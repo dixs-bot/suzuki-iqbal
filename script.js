@@ -388,8 +388,8 @@ const products = [
       'Tipe': 'Blind Van (Tanpa Jendela Samping)',
       'Fitur': 'Kabin Tertutup, Rak Muatan'
     }
-  }
-];
+  },
+
 
 // ================= DATA SERAH TERIMA =================
 const deliveryPhotos = [

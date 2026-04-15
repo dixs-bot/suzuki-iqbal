@@ -330,7 +330,7 @@ const products = [
     category: 'passenger',
     tagline: 'Premium Hatchback',
     description: 'Hatchback premium dengan kabin lega, fitur keselamatan lengkap, dan desain sporty. Ideal untuk profesional muda di perkotaan.',
-    image: 'baleno.png',
+    image: 'BALENO.jpg',
     gallery: [
       'baleno1.png',
     ],

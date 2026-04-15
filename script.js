@@ -403,16 +403,30 @@ const products = [
 
 // ================= DATA SERAH TERIMA =================
 const deliveryPhotos = [
-  { src: 'delivery-xl7.jpg', caption: 'Serah Terima Suzuki XL7 Alpha AT' },
-  { src: 'delivery-ertiga.jpg', caption: 'Serah Terima Suzuki Ertiga GX Hybrid' },
-  { src: 'delivery-carry.jpg', caption: 'Serah Terima Suzuki Carry Wide Deck' },
-  { src: 'delivery-jimny.jpg', caption: 'Serah Terima Suzuki Jimny 5 Door' },
-  { src: 'delivery-grand-vitara.jpg', caption: 'Serah Terima Grand Vitara Alpha' },
-  { src: 'delivery-spresso.jpg', caption: 'Serah Terima S-Presso GX AGS' },
-  { src: 'delivery-fronx.jpg', caption: 'Serah Terima Suzuki Fronx RX Turbo' },
-  { src: 'delivery-baleno.jpg', caption: 'Serah Terima Suzuki Baleno Alpha AT' }
+  { src: 'serah-terima.jpeg', caption: 'Serah Terima Suzuki XL7 Alpha AT' },
+  { src: 'serah-terima1.jpeg', caption: 'Serah Terima Suzuki Ertiga GX Hybrid' },
+  { src: 'serah-terima2.jpeg', caption: 'Serah Terima Suzuki Carry Wide Deck' },
+  { src: 'serah-terima3.jpeg', caption: 'Serah Terima Suzuki Jimny 5 Door' },
+  { src: 'serah-terima4.jpeg', caption: 'Serah Terima Grand Vitara Alpha' },
+  { src: 'serah-terima5.jpeg', caption: 'Serah Terima S-Presso GX AGS' },
+  { src: 'serah-terima6.jpeg', caption: 'Serah Terima Suzuki Fronx RX Turbo' },
+  { src: 'serah-terima7.jpeg', caption: 'Serah Terima Suzuki Baleno Alpha AT' },
+  { src: 'serah-terima8.jpeg', caption: 'Serah Terima Mobil Suzuki' },
+  { src: 'serah-terima9.jpeg', caption: 'Serah Terima Mobil Suzuki' },
+  { src: 'serah-terima10.jpeg', caption: 'Serah Terima Mobil Suzuki' },
+  { src: 'serah-terima11.jpeg', caption: 'Serah Terima Mobil Suzuki' },
+  { src: 'serah-terima12.jpeg', caption: 'Serah Terima Mobil Suzuki' },
+  { src: 'serah-terima13.jpeg', caption: 'Serah Terima Mobil Suzuki' },
+  { src: 'serah-terima14.jpeg', caption: 'Serah Terima Mobil Suzuki' },
+  { src: 'serah-terima15.jpeg', caption: 'Serah Terima Mobil Suzuki' },
+  { src: 'serah-terima16.jpeg', caption: 'Serah Terima Mobil Suzuki' },
+  { src: 'serah-terima17.jpeg', caption: 'Serah Terima Mobil Suzuki' },
+  { src: 'serah-terima18.jpeg', caption: 'Serah Terima Mobil Suzuki' },
+  { src: 'serah-terima19.jpeg', caption: 'Serah Terima Mobil Suzuki' },
+  { src: 'serah-terima20.jpeg', caption: 'Serah Terima Mobil Suzuki' },
+  { src: 'serah-terima21.jpeg', caption: 'Serah Terima Mobil Suzuki' },
+  { src: 'serah-terima22.jpeg', caption: 'Serah Terima Mobil Suzuki' }
 ];
-
 // ================= VARIABEL GLOBAL =================
 let currentFilter = 'all';
 let currentProduct = null;

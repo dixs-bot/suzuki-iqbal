@@ -651,6 +651,61 @@
     </div>
   </footer>
 
+    <!-- ================= FLOATING TEST DRIVE ================= -->
+  <button id="td-float" class="td-float" aria-label="Booking Test Drive">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 16H9m10 0h3v-3a3 3 0 00-3-3V7a3 3 0 00-3-3H6a3 3 0 00-3 3v4a3 3 0 003 3h3a3 3 0 013 3v3h4"/><circle cx="17" cy="17" r="3"/></svg>
+    <span class="td-float-text">Free Test Drive</span>
+  </button>
+
+  <!-- ================= POPUP TEST DRIVE ================= -->
+  <div id="td-modal" class="td-overlay hidden" aria-hidden="true">
+    <div class="td-popup">
+      <button class="td-close" id="td-close" aria-label="Tutup">&times;</button>
+
+      <div class="td-popup-header">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#E30613" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 16H9m10 0h3v-3a3 3 0 00-3-3V7a3 3 0 00-3-3H6a3 3 0 00-3 3v4a3 3 0 003 3h3a3 3 0 013 3v3h4"/><circle cx="17" cy="17" r="3"/></svg>
+        <h3>Booking Free Test Drive</h3>
+        <p>Rasakan langsung berkendara mobil Suzuki pilihan Anda</p>
+      </div>
+
+      <form id="td-form" class="td-form">
+        <div class="td-field">
+          <label for="td-car">Pilih Mobil</label>
+          <select id="td-car" required>
+            <option value="">-- Pilih Mobil --</option>
+            <option value="Suzuki APV Passenger">Suzuki APV Passenger</option>
+            <option value="Suzuki APV Blind Van">Suzuki APV Blind Van</option>
+            <option value="Suzuki Ertiga">Suzuki Ertiga</option>
+            <option value="Suzuki XL7">Suzuki XL7</option>
+            <option value="Suzuki Carry">Suzuki Carry</option>
+            <option value="Suzuki Jimny 3 Door">Suzuki Jimny 3 Door</option>
+            <option value="Suzuki Jimny 5 Door">Suzuki Jimny 5 Door</option>
+            <option value="Suzuki Grand Vitara">Suzuki Grand Vitara</option>
+            <option value="Suzuki S-Presso">Suzuki S-Presso</option>
+            <option value="Suzuki Fronx">Suzuki Fronx</option>
+          </select>
+        </div>
+        <div class="td-field">
+          <label for="td-date">Tanggal Test Drive</label>
+          <input type="date" id="td-date" required />
+        </div>
+        <div class="td-field">
+          <label for="td-time">Jam Test Drive</label>
+          <input type="time" id="td-time" required />
+        </div>
+        <button type="submit" class="td-submit">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Kirim Booking via WhatsApp
+        </button>
+      </form>
+
+      <p class="td-disclaimer">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        Test drive gratis — tidak dipungut biaya apapun
+      </p>
+    </div>
+  </div>
+  
   <!-- ================= FLOATING WA ================= -->
   <a href="https://wa.me/6285724887779" target="_blank" class="wa-float" aria-label="Chat WhatsApp" id="wa-float">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.387 0-4.593-.836-6.32-2.228l-.44-.358-2.898.972.972-2.898-.358-.44A9.935 9.935 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>

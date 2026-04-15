@@ -2034,24 +2034,25 @@ ul { list-style: none; }
   position: fixed;
   bottom: 96px;
   right: 28px;
-  width: 58px;
-  height: 58px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: #ffffff;
+  gap: 10px;
+  padding: 12px 20px;
+  background: var(--red);
+  color: #fff;
   border: none;
-  border-radius: 50%;
+  border-radius: 60px;
   z-index: 901;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 16px rgba(227, 6, 19, 0.35);
   transition: all var(--transition);
   cursor: pointer;
   animation: tdFloat 3s ease-in-out infinite;
+  white-space: nowrap;
 }
 
 .td-float:hover {
-  transform: scale(1.08);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+  transform: scale(1.05);
+  box-shadow: 0 6px 24px rgba(227, 6, 19, 0.5);
 }
 
 @keyframes tdFloat {
@@ -2059,17 +2060,10 @@ ul { list-style: none; }
   50% { transform: translateY(-4px); }
 }
 
-.td-float-icon {
-  width: 52px;
-  height: 52px;
-  object-fit: contain;
-}
-
-.td-popup-logo {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  border-radius: 8px;
+.td-float-text {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
 }
 
 /* ================= TEST DRIVE POPUP ================= */
@@ -2275,15 +2269,22 @@ ul { list-style: none; }
 }
 
 @media (max-width: 480px) {
-  .td-float {
-    bottom: 82px;
-    right: 16px;
-    width: 52px;
-    height: 52px;
+  .td-float-text {
+    display: none;
   }
 
-  .td-float-icon {
-    width: 48px;
-    height: 48px;
+  .td-float {
+    bottom: 78px;
+    right: 16px;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .td-float svg {
+    width: 24px;
+    height: 24px;
   }
 }

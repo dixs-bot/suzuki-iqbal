@@ -707,10 +707,40 @@
     </div>
   </div>
   
-  <!-- ================= FLOATING WA ================= -->
-  <a href="https://wa.me/6285724887779" target="_blank" class="wa-float" aria-label="Chat WhatsApp" id="wa-float">
+   <!-- ================= FLOATING WA ================= -->
+  <button id="wa-float" class="wa-float" aria-label="Chat WhatsApp">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.387 0-4.593-.836-6.32-2.228l-.44-.358-2.898.972.972-2.898-.358-.44A9.935 9.935 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
-  </a>
+  </button>
+
+  <!-- ================= WA POPUP PILIH SALES ================= -->
+  <div id="wa-popup" class="wa-popup hidden" aria-hidden="true">
+    <div class="wa-popup-card">
+      <div class="wa-popup-arrow"></div>
+      <p class="wa-popup-title">Pilih Sales untuk Chat</p>
+
+      <a href="https://wa.me/6285724887779?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20Suzuki.%20Mohon%20informasi%20lebih%20lanjut." target="_blank" class="wa-sales-btn" rel="noopener">
+        <div class="wa-sales-avatar">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div class="wa-sales-info">
+          <span class="wa-sales-name">Iqbal Suzuki Bandung</span>
+          <span class="wa-sales-role">Sales Consultant</span>
+        </div>
+        <svg class="wa-sales-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+
+      <a href="https://wa.me/6281292930701?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20Suzuki.%20Mohon%20informasi%20lebih%20lanjut." target="_blank" class="wa-sales-btn" rel="noopener">
+        <div class="wa-sales-avatar wa-avatar-2">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div class="wa-sales-info">
+          <span class="wa-sales-name">Tim Sales NJS</span>
+          <span class="wa-sales-role">Sales Support</span>
+        </div>
+        <svg class="wa-sales-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </div>
+  </div>
 
   <!-- ================= MODAL PRODUK ================= -->
   <div id="product-modal" class="modal-overlay hidden" aria-hidden="true">

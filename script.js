@@ -436,6 +436,19 @@ const products = [
     }
   }
 ];
+
+// ================= DATA SERAH TERIMA =================
+const deliveryPhotos = [
+  { src: 'delivery-xl7.jpg', caption: 'Serah Terima Suzuki XL7 Alpha AT' },
+  { src: 'delivery-ertiga.jpg', caption: 'Serah Terima Suzuki Ertiga GX Hybrid' },
+  { src: 'delivery-carry.jpg', caption: 'Serah Terima Suzuki Carry Wide Deck' },
+  { src: 'delivery-jimny.jpg', caption: 'Serah Terima Suzuki Jimny 5 Door' },
+  { src: 'delivery-grand-vitara.jpg', caption: 'Serah Terima Grand Vitara Alpha' },
+  { src: 'delivery-spresso.jpg', caption: 'Serah Terima S-Presso GX AGS' },
+  { src: 'delivery-fronx.jpg', caption: 'Serah Terima Suzuki Fronx RX Turbo' },
+  { src: 'delivery-baleno.jpg', caption: 'Serah Terima Suzuki Baleno Alpha AT' }
+];
+
 // ================= VARIABEL GLOBAL =================
 let currentFilter = 'all';
 let currentProduct = null;

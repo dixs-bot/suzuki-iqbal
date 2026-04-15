@@ -457,6 +457,7 @@ document.addEventListener('DOMContentLoaded', function () {
   renderLandingPages();
   renderDeliveryGallery();
   initVideoFallback();
+  initTestDrive();
 });
 
 // ================= NAVBAR =================
@@ -1174,6 +1175,83 @@ function checkDistance() {
     },
     { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
   );
+}
+// ================= TEST DRIVE POPUP =================
+function initTestDrive() {
+  var btn = document.getElementById('td-float');
+  var modal = document.getElementById('td-modal');
+  var closeBtn = document.getElementById('td-close');
+  var form = document.getElementById('td-form');
+  var dateInput = document.getElementById('td-date');
+
+  if (!btn || !modal) return;
+
+  // Set min tanggal hari ini
+  if (dateInput) {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var yyyy = today.getFullYear();
+    dateInput.setAttribute('min', yyyy + '-' + mm + '-' + dd);
+  }
+
+  // Buka popup
+  btn.addEventListener('click', function () {
+    modal.classList.remove('hidden');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  });
+
+  // Tutup popup
+  function closeTdModal() {
+    modal.classList.add('hidden');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  closeBtn.addEventListener('click', closeTdModal);
+  modal.addEventListener('click', function (e) {
+    if (e.target === modal) closeTdModal();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+      closeTdModal();
+    }
+  });
+
+  // Submit form
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var car = document.getElementById('td-car').value;
+    var date = document.getElementById('td-date').value;
+    var time = document.getElementById('td-time').value;
+
+    if (!car || !date || !time) {
+      alert('Mohon lengkapi semua data booking.');
+      return;
+    }
+
+    // Format tanggal ke bahasa Indonesia
+    var dateParts = date.split('-');
+    var bulan = [
+      '', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+      'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+    ];
+    var tglFormat = dateParts[2] + ' ' + bulan[parseInt(dateParts[1])] + ' ' + dateParts[0];
+
+    var waText = 'Halo Suzuki Naripan Bandung,\n\n';
+    waText += 'Saya ingin melakukan Free Test Drive. Berikut detailnya:\n\n';
+    waText += '🚗 Mobil: ' + car + '\n';
+    waText += '📅 Tanggal: ' + tglFormat + '\n';
+    waText += '🕐 Jam: ' + time + ' WIB\n\n';
+    waText += 'Mohon konfirmasi jadwal test drive saya. Terima kasih.';
+
+    var waUrl = 'https://wa.me/6285724887779?text=' + encodeURIComponent(waText);
+    window.open(waUrl, '_blank');
+
+    closeTdModal();
+  });
 }
 
 function toRad(deg) {

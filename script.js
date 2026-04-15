@@ -458,6 +458,7 @@ document.addEventListener('DOMContentLoaded', function () {
   renderDeliveryGallery();
   initVideoFallback();
   initTestDrive();
+  initWaPopup();
 });
 
 // ================= NAVBAR =================
@@ -1251,6 +1252,56 @@ function initTestDrive() {
     window.open(waUrl, '_blank');
 
     closeTdModal();
+  });
+}
+
+// ================= WA POPUP =================
+function initWaPopup() {
+  var btn = document.getElementById('wa-float');
+  var popup = document.getElementById('wa-popup');
+
+  if (!btn || !popup) return;
+
+  var isOpen = false;
+
+  // Toggle popup
+  btn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    isOpen = !isOpen;
+
+    if (isOpen) {
+      popup.classList.remove('hidden');
+      btn.classList.add('wa-open');
+    } else {
+      closeWaPopup();
+    }
+  });
+
+  function closeWaPopup() {
+    popup.classList.add('hidden');
+    btn.classList.remove('wa-open');
+    isOpen = false;
+  }
+
+  // Tutup saat klik di luar
+  document.addEventListener('click', function (e) {
+    if (isOpen && !popup.contains(e.target) && !btn.contains(e.target)) {
+      closeWaPopup();
+    }
+  });
+
+  // Tutup saat scroll
+  window.addEventListener('scroll', function () {
+    if (isOpen) {
+      closeWaPopup();
+    }
+  }, { passive: true });
+
+  // Tutup saat Escape
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && isOpen) {
+      closeWaPopup();
+    }
   });
 }
 

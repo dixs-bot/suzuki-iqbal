@@ -10,7 +10,26 @@
 
   gtag('config', 'AW-18096143339');
 </script>
-  
+
+  <!-- Event snippet for Mengirim formulir lead conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-18096143339/4tD0CJ3usZ0cEOv39LRD',
+      'value': 1.0,
+      'currency': 'IDR',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -747,29 +766,13 @@
       <div class="wa-popup-arrow"></div>
       <p class="wa-popup-title">Pilih Sales untuk Chat</p>
 
-      <a href="https://wa.me/6285724887779?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20Suzuki.%20Mohon%20informasi%20lebih%20lanjut." target="_blank" class="wa-sales-btn" rel="noopener">
-        <div class="wa-sales-avatar">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </div>
-        <div class="wa-sales-info">
-          <span class="wa-sales-name">Iqbal Suzuki Bandung</span>
-          <span class="wa-sales-role">Sales Consultant</span>
-        </div>
-        <svg class="wa-sales-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-      </a>
+     <a href="https://wa.me/6285724887779?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20Suzuki.%20Mohon%20informasi%20lebih%20lanjut."
+onclick="gtag('event','conversion',{'send_to':'AW-18096143339/4tD0CJ3usZ0cEOv39LRD'});"
+target="_blank" class="wa-sales-btn" rel="noopener">
 
-      <a href="https://wa.me/6281292930701?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20Suzuki.%20Mohon%20informasi%20lebih%20lanjut." target="_blank" class="wa-sales-btn" rel="noopener">
-        <div class="wa-sales-avatar wa-avatar-2">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </div>
-        <div class="wa-sales-info">
-          <span class="wa-sales-name">Tim Sales NJS</span>
-          <span class="wa-sales-role">Sales Support</span>
-        </div>
-        <svg class="wa-sales-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-      </a>
-    </div>
-  </div>
+     <a href="https://wa.me/6281292930701?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20Suzuki.%20Mohon%20informasi%20lebih%20lanjut."
+onclick="gtag('event','conversion',{'send_to':'AW-18096143339/4tD0CJ3usZ0cEOv39LRD'});"
+target="_blank" class="wa-sales-btn" rel="noopener">
 
   <!-- ================= MODAL PRODUK ================= -->
   <div id="product-modal" class="modal-overlay hidden" aria-hidden="true">

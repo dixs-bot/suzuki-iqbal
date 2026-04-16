@@ -1327,10 +1327,13 @@ ul { list-style: none; }
 .modal-product-image {
   width: 100%;
   height: 260px;
-  object-fit: cover;
+  object-fit: contain;
+  max-height: 220px;
+  margin: 0 auto;
+  display: block;
   border-radius: var(--radius);
   border: 1px solid var(--border-light);
-  background: var(--bg-alt);
+  background: gambar yang bisa muat foto mobil di modal tanpa kepotong;
 }
 
 .modal-product-gallery {

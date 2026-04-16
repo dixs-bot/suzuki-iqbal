@@ -415,7 +415,7 @@ ul { list-style: none; }
 
 .hero-left p {
   font-size: 16px;
-  color: var(--text-secondary);
+  color:  #1a1d23;
   line-height: 1.75;
   max-width: 520px;
   margin-bottom: 32px;

@@ -415,7 +415,7 @@ ul { list-style: none; }
 
 .hero-left p {
   font-size: 16px;
-  color:  #1a1d23;
+  color:  #fff;
   line-height: 1.75;
   max-width: 520px;
   margin-bottom: 32px;
@@ -430,7 +430,7 @@ ul { list-style: none; }
 
 .hero-sales-card {
   padding: 18px 22px;
-  background: var(--white);
+  background:#4d4d4d;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   max-width: fit-content;

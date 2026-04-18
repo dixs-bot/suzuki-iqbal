@@ -435,11 +435,14 @@ function parseRupiah(str) {
 }
 
 function hitungCicilan(harga, dp, tenor, bunga) {
-  const pinjaman = harga - dp;
-  if (pinjaman <= 0) return 0;
-  const r = (bunga / 100) / 12;
-  if (r === 0) return pinjaman / tenor;
-  return pinjaman * (r * Math.pow(1 + r, tenor)) / (Math.pow(1 + r, tenor) - 1);
+  const pokok = harga - dp;
+  if (pokok <= 0) return 0;
+
+  const bungaPerBulan = bunga / 100 / 12;
+  const totalBunga = pokok * bungaPerBulan * tenor;
+  const total = pokok + totalBunga;
+
+  return Math.round(total / tenor);
 }
 
 // ================= DOM READY =================
@@ -448,7 +451,6 @@ document.addEventListener('DOMContentLoaded', function () {
   initScrollReveal();
   initCategoryFilter();
   renderProducts();
-  getLeasingRate()
   initGlobalSimulation();
   initModal();
   initFAQ();

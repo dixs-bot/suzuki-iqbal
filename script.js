@@ -448,6 +448,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initScrollReveal();
   initCategoryFilter();
   renderProducts();
+  getLeasingRate()
   initGlobalSimulation();
   initModal();
   initFAQ();
@@ -608,6 +609,32 @@ function renderProducts() {
   });
 }
 
+
+function getLeasingRate(tenor, dp, harga) {
+  const dpRatio = dp / harga;
+
+  if (tenor <= 12) return 24;
+
+  if (tenor <= 24) {
+    return dpRatio >= 0.3 ? 18 : 20;
+  }
+
+  if (tenor <= 36) {
+    return dpRatio >= 0.3 ? 16 : 18;
+  }
+
+  if (tenor <= 48) {
+    return dpRatio >= 0.3 ? 15 : 17;
+  }
+
+  if (tenor <= 60) {
+    return dpRatio >= 0.3 ? 14 : 16;
+  }
+
+  return 15;
+}
+
+
 // ================= SIMULASI KREDIT GLOBAL =================
 function initGlobalSimulation() {
   const form = document.getElementById('global-simulation-form');
@@ -658,7 +685,7 @@ function initGlobalSimulation() {
     const harga = parseRupiah(priceInput.value);
     const dp = parseRupiah(document.getElementById('global-dp-input').value);
     const tenor = parseInt(document.getElementById('global-tenor-input').value);
-    const bunga = parseFloat(document.getElementById('global-interest-input').value) || 0;
+   const bunga = getLeasingRate(tenor, dp, harga);
 
     if (harga <= 0) return alert('Masukkan harga mobil yang valid.');
     if (dp >= harga) return alert('DP harus lebih kecil dari harga mobil.');

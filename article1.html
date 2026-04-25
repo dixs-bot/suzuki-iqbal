@@ -7,49 +7,319 @@
 
   <meta name="description" content="Dealer resmi Suzuki Bandung & Cimahi (NJS). Jual mobil baru Suzuki: XL7, Ertiga, Carry, Jimny, Baleno. Promo, kredit DP ringan & proses cepat.">
   <meta name="keywords" content="Dealer Suzuki Bandung, Dealer Suzuki Cimahi, Suzuki Bandung, Suzuki Cimahi, Kredit Suzuki Bandung, Promo Suzuki Bandung">
-  
-  <!-- Pastikan file style.css ada di folder yang sama -->
-  <link rel="stylesheet" href="style.css">
   <link rel="canonical" href="https://suzukinjsbandung.id/article1.html">
+  
+  <!-- Google Fonts untuk tampilan modern -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ================= CSS VARIABLES (TEMA SUZUKI PUTIH & BIRU) ================= */
+    :root {
+      --suzuki-blue: #005DAA;       /* Biru Utama Suzuki */
+      --suzuki-dark: #003B70;      /* Biru Gelap untuk Hover/Footer */
+      --suzuki-light: #E6F2FF;     /* Biru sangat muda untuk background section */
+      --text-dark: #2C3E50;        /* Warna teks utama */
+      --text-light: #666666;       /* Warna teks deskripsi */
+      --white: #FFFFFF;
+      --bg-body: #F4F7F9;          /* Abu-abu sangat muda untuk background website */
+      --shadow: 0 4px 20px rgba(0, 93, 170, 0.1); /* Shadow halus bernuansa biru */
+    }
+
+    /* ================= RESET & GLOBAL ================= */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    a { text-decoration: none; color: inherit; transition: 0.3s; }
+    ul { list-style: none; }
+    img { max-width: 100%; height: auto; }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ================= NAVBAR ================= */
+    header {
+      background-color: var(--suzuki-blue);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .navbar-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--white);
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-link {
+      color: rgba(255,255,255,0.9);
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    .nav-link:hover {
+      color: var(--white);
+      text-decoration: underline;
+    }
+
+    .mobile-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* ================= ARTICLE LAYOUT ================= */
+    .article-page {
+      padding: 40px 0;
+      flex: 1; /* Agar footer selalu di bawah */
+    }
+
+    .article-wrapper {
+      background-color: var(--white);
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 50px;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .breadcrumb {
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: var(--suzuki-blue);
+    }
+
+    .breadcrumb span { margin: 0 5px; color: var(--text-light); }
+
+    h1.article-title {
+      color: var(--suzuki-blue);
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 25px;
+      border-bottom: 3px solid var(--suzuki-light);
+      padding-bottom: 15px;
+      line-height: 1.3;
+    }
+
+    .article-content p {
+      margin-bottom: 20px;
+      color: var(--text-dark);
+      font-size: 16px;
+      text-align: justify;
+    }
+
+    .article-content h2 {
+      color: var(--suzuki-dark);
+      font-size: 24px;
+      margin-top: 35px;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .article-content ul {
+      margin: 0 0 20px 20px;
+      list-style-type: disc;
+    }
+
+    .article-content li {
+      margin-bottom: 10px;
+      color: var(--text-dark);
+    }
+
+    /* ================= CTA BOX (SALES) ================= */
+    .sales-cta-box {
+      background-color: var(--suzuki-light);
+      border: 1px solid #D6E9FF;
+      border-radius: 8px;
+      padding: 30px;
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .sales-cta-box h2 {
+      color: var(--suzuki-dark);
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+
+    .sales-profile {
+      margin: 20px 0;
+    }
+
+    .sales-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--suzuki-blue);
+      margin-bottom: 5px;
+    }
+
+    .sales-role {
+      font-size: 15px;
+      color: var(--text-light);
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 25px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background-color: var(--suzuki-blue);
+      color: var(--white);
+      box-shadow: 0 4px 10px rgba(0, 93, 170, 0.3);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--suzuki-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background-color: var(--white);
+      color: var(--suzuki-blue);
+      border: 2px solid var(--suzuki-blue);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--suzuki-blue);
+      color: var(--white);
+    }
+
+    /* ================= FOOTER ================= */
+    footer {
+      background-color: var(--suzuki-dark);
+      color: var(--white);
+      padding: 40px 0 20px;
+      margin-top: auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .footer-col h3 {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #8CB9FF; /* Biru terang untuk judul footer */
+    }
+
+    .footer-col p, .footer-col a {
+      color: #D6E9FF;
+      margin-bottom: 10px;
+      display: block;
+      font-size: 14px;
+    }
+    
+    .footer-col a:hover { color: var(--white); text-decoration: underline; }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 768px) {
+      .navbar-container { position: relative; }
+      .nav-menu {
+        display: none; /* Hide default */
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--suzuki-blue);
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      }
+      .nav-menu.active { display: flex; }
+      .mobile-toggle { display: block; color: white; }
+      
+      .article-wrapper { padding: 30px 20px; }
+      h1.article-title { font-size: 24px; }
+      
+      .cta-buttons { flex-direction: column; }
+      .btn { width: 100%; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- ================= NAVBAR ================= -->
-  <header id="navbar">
+  <!-- ================= HEADER ================= -->
+  <header>
     <div class="container navbar-container">
-      <a href="index.html" class="logo">Suzuki NJS</a>
-      
-      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
-        <span class="hamburger"></span>
-      </button>
-
-      <div id="nav-overlay" class="nav-overlay"></div>
-      
-      <nav id="nav-menu">
-        <ul class="nav-list">
-          <li><a href="index.html">Beranda</a></li>
-          <li><a href="index.html#products">Produk</a></li>
-          <li><a href="index.html#promo">Promo</a></li>
-          <li><a href="index.html#simulation">Simulasi Kredit</a></li>
-          <li><a href="index.html#contact">Kontak</a></li>
-        </ul>
+      <a href="index.html" class="logo">SUZUKI NJS</a>
+      <div class="mobile-toggle" onclick="toggleMenu()">☰</div>
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Beranda</a>
+        <a href="index.html#products" class="nav-link">Produk</a>
+        <a href="index.html#promo" class="nav-link">Promo</a>
+        <a href="index.html#simulation" class="nav-link">Simulasi Kredit</a>
+        <a href="index.html#contact" class="nav-link">Hubungi Kami</a>
       </nav>
     </div>
   </header>
 
-  <!-- ================= MAIN CONTENT (ARTICLE) ================= -->
+  <!-- ================= MAIN CONTENT ================= -->
   <main class="container article-page">
     
-    <!-- Breadcrumb / Navigasi Kecil -->
-    <div class="article-breadcrumb">
-      <a href="index.html">Beranda</a> <span>&rsaquo;</span> <span class="current">Dealer Suzuki Bandung & Cimahi Resmi</span>
-    </div>
+    <div class="article-wrapper">
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        <a href="index.html">Beranda</a> <span>&rsaquo;</span> <span class="current">Info Dealer</span>
+      </div>
 
-    <article class="article-content reveal">
-      
-      <h1 class="article-title">Dealer Suzuki Bandung & Cimahi Resmi – Promo Mobil Baru & Kredit DP Ringan</h1>
+      <article class="article-content">
+        <h1 class="article-title">Dealer Suzuki Bandung & Cimahi Resmi – Promo Mobil Baru & Kredit DP Ringan</h1>
 
-      <div class="article-text">
         <p>
           Jika Anda sedang mencari <strong>dealer Suzuki Bandung dan Cimahi</strong> yang resmi, terpercaya,
           dan menawarkan promo mobil baru dengan kredit DP ringan, maka <strong>Suzuki NJS Naripan Bandung</strong>
@@ -79,7 +349,7 @@
           mulai dari potongan harga, bonus aksesoris, hingga paket kredit dengan DP ringan.
         </p>
 
-        <ul class="styled-list">
+        <ul>
           <li>Promo Suzuki XL7 Hybrid Bandung</li>
           <li>Promo Suzuki Ertiga Hybrid Bandung</li>
           <li>Promo Suzuki Carry Pick Up Bandung</li>
@@ -99,80 +369,90 @@
         </p>
 
         <h2>Kenapa Beli Mobil di Suzuki NJS Naripan Bandung?</h2>
-        <ul class="styled-list">
+        <ul>
           <li>Dealer resmi Suzuki Bandung & Cimahi</li>
           <li>Mobil baru bergaransi resmi</li>
           <li>Promo & DP ringan setiap bulan</li>
           <li>Proses kredit mudah & transparan</li>
           <li>Sales profesional & responsif</li>
         </ul>
-      </div>
 
-      <!-- Sales Contact Section (Call to Action) -->
-      <div class="sales-cta-box">
-        <h2>Hubungi Sales Suzuki Bandung Sekarang</h2>
-        <p>
-          Untuk informasi promo terbaru, simulasi kredit, atau booking test drive,
-          silakan hubungi sales kami:
-        </p>
+        <!-- CTA SECTION (SALES) -->
+        <div class="sales-cta-box">
+          <h2>Hubungi Sales Suzuki Bandung Sekarang</h2>
+          <p>
+            Untuk informasi promo terbaru, simulasi kredit, atau booking test drive,
+            silakan hubungi sales kami:
+          </p>
 
-        <div class="sales-profile">
-          <p class="sales-name"><strong>Iqbal NJS Naripan</strong></p>
-          <p class="sales-role">Sales Consultant Suzuki NJS Naripan Bandung</p>
+          <div class="sales-profile">
+            <p class="sales-name"><strong>Iqbal NJS Naripan</strong></p>
+            <p class="sales-role">Sales Consultant Suzuki NJS Naripan Bandung</p>
+          </div>
+
+          <p style="font-size: 14px; color: #666;">
+            Klik WhatsApp di website ini untuk respon cepat dan konsultasi GRATIS.
+          </p>
+
+          <div class="cta-buttons">
+            <!-- Tombol WhatsApp (Hijau sedikit tapi dikunci tema biru di CSS, kita biarkan biru agar matching) -->
+            <a href="https://wa.me/6285724887779?text=Halo%20Sales%20Suzuki,%20saya%20ingin%20info%20promo%20dan%20kredit" class="btn btn-primary" target="_blank">
+              <svg style="width:20px; height:20px; margin-right:10px;" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              Chat WhatsApp
+            </a>
+            
+            <!-- Tombol Telepon -->
+            <a href="tel:+6285724887779" class="btn btn-secondary">
+              <svg style="width:20px; height:20px; margin-right:10px;" fill="currentColor" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.44-5.15-3.75-6.59-6.59l1.97-1.57c.27-.28.36-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+              Telepon Sales
+            </a>
+          </div>
         </div>
+        <!-- END CTA -->
 
-        <p class="sales-note">
-          Klik WhatsApp di website ini untuk respon cepat dan konsultasi GRATIS.
-        </p>
+      </article>
+    </div>
 
-        <div class="cta-buttons">
-          <a href="https://wa.me/6285724887779?text=Halo%20Sales%20Suzuki,%20saya%20tertarik%20dengan%20promo%20di%20halaman%20artikel" class="btn btn-primary btn-wa" target="_blank">
-            <span class="icon-whatsapp"></span> Hubungi via WhatsApp
-          </a>
-          <a href="tel:+6285724887779" class="btn btn-secondary">
-            <span class="icon-phone"></span> Hubungi via Telepon
-          </a>
-        </div>
-      </div>
-
-    </article>
   </main>
 
   <!-- ================= FOOTER ================= -->
-  <footer id="footer">
-    <div class="container footer-content">
-      <div class="footer-section">
-        <h3>Suzuki NJS Naripan</h3>
-        <p>Dealer Resmi Mobil Suzuki Bandung & Cimahi. Melayani penjualan cash, kredit, tukar tambah, dan service.</p>
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Suzuki NJS Naripan</h3>
+          <p>Dealer resmi mobil Suzuki Bandung & Cimahi. Melayani penjualan cash, kredit, tukar tambah, dan service.</p>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Produk Unggulan</h3>
+          <a href="#">All New Ertiga Hybrid</a>
+          <a href="#">XL7 Hybrid</a>
+          <a href="#">Suzuki Jimny</a>
+          <a href="#">New Carry Pick Up</a>
+        </div>
+
+        <div class="footer-col">
+          <h3>Lokasi & Kontak</h3>
+          <p>Jl. Naripan No. 99, Bandung, Jawa Barat</p>
+          <p>HP/WA: 0857-2488-7779</p>
+          <p>Email: sales@suzukinjs.com</p>
+        </div>
       </div>
       
-      <div class="footer-section">
-        <h3>Link Cepat</h3>
-        <ul>
-          <li><a href="index.html">Beranda</a></li>
-          <li><a href="index.html#products">Daftar Harga</a></li>
-          <li><a href="index.html#simulation">Simulasi Kredit</a></li>
-          <li><a href="index.html#contact">Hubungi Kami</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-section">
-        <h3>Kontak Kami</h3>
-        <p>Jl. Naripan No. 99, Bandung, Jawa Barat</p>
-        <p>HP/WA: 0857-2488-7779</p>
-      </div>
-    </div>
-    
-    <div class="footer-bottom">
-      <div class="container">
-        <p>&copy; 2024 Suzuki NJS Naripan Bandung. All Rights Reserved.</p>
+      <div class="copyright">
+        &copy; 2024 Suzuki NJS Naripan Bandung. All Rights Reserved.
       </div>
     </div>
   </footer>
 
-  <!-- ================= JAVASCRIPT ================= -->
-  <!-- Pastikan file script.js ada di folder yang sama dan sudah berisi kode JS sebelumnya -->
-  <script src="script.js"></script>
+  <!-- Script Sederhana untuk Mobile Menu -->
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById("navMenu");
+      menu.classList.toggle("active");
+    }
+  </script>
 
 </body>
 </html>

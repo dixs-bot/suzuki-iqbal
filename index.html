@@ -889,110 +889,90 @@ function gtag_report_conversion(url) {
   
   <script src="script.js"></script>
 
-<!-- ============================================
-     SUZUKI POPUP BANNER - OPTIMIZED VERSION
-     ============================================ -->
+<!-- ================= POPUP FRONX ================= -->
 
 <style>
-:root {
-  --spp-bg: #0f172a;
-  --spp-card: #1e293b;
-  --spp-accent: #f59e0b;
-  --spp-success: #25d366;
-  --spp-text: #ffffff;
-  --spp-muted: #94a3b8;
-  --spp-border: rgba(255,255,255,0.1);
-}
-
-/* Overlay */
-#spp-overlay {
+#promo-popup {
   position: fixed;
   inset: 0;
-  background: rgba(10,22,40,0.85);
-  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(6px);
   display:flex;
   align-items:center;
   justify-content:center;
   z-index:99999;
   opacity:0;
   visibility:hidden;
-  transition:0.4s;
+  transition:0.3s;
 }
-#spp-overlay.active {
+#promo-popup.active {
   opacity:1;
   visibility:visible;
 }
 
-/* Container */
-#spp-container {
-  max-width:420px;
+.popup-box {
+  position:relative;
   width:90%;
-  background:linear-gradient(145deg,#1e293b,#0f172a);
+  max-width:420px;
   border-radius:16px;
-  padding:20px;
-  text-align:center;
+  overflow:hidden;
   transform:scale(0.85);
-  opacity:0;
-  transition:0.4s;
+  transition:0.3s;
 }
-#spp-overlay.active #spp-container {
+#promo-popup.active .popup-box {
   transform:scale(1);
-  opacity:1;
 }
 
-/* Close */
-.spp-close {
+.popup-img {
+  width:100%;
+  display:block;
+}
+
+/* tombol close */
+.popup-close {
   position:absolute;
   top:10px;
   right:10px;
+  background:rgba(0,0,0,0.5);
+  color:#fff;
+  border:none;
+  border-radius:50%;
+  width:32px;
+  height:32px;
   cursor:pointer;
-  font-size:20px;
-  color:#aaa;
+  font-size:16px;
 }
 
-/* Image */
-.spp-image {
-  width:100%;
-  border-radius:10px;
-  margin:10px 0;
-}
-
-/* CTA */
-.spp-btn {
-  display:block;
-  padding:12px;
-  border-radius:8px;
-  margin:8px 0;
-  text-decoration:none;
-  font-weight:bold;
-}
-.spp-wa {
+/* tombol CTA */
+.popup-cta {
+  position:absolute;
+  bottom:15px;
+  left:50%;
+  transform:translateX(-50%);
   background:#25d366;
   color:#fff;
+  padding:12px 20px;
+  border-radius:8px;
+  font-weight:bold;
+  text-decoration:none;
+  box-shadow:0 4px 15px rgba(0,0,0,0.4);
 }
-.spp-detail {
-  border:1px solid #fff;
-  color:#fff;
-}
-
 </style>
 
-<div id="spp-overlay">
-  <div id="spp-container">
+<div id="promo-popup">
+  <div class="popup-box">
 
-    <div class="spp-close" id="spp-close">✕</div>
+    <button class="popup-close" id="popupClose">✕</button>
 
-    <h2 id="spp-title"></h2>
-    <p id="spp-subtitle"></p>
+    <!-- GANTI NAMA GAMBAR DI SINI -->
+    <img src="popup.jpeg" class="popup-img" alt="Promo Suzuki Fronx">
 
-    <img id="spp-image" class="spp-image" loading="lazy">
-
-    <a id="spp-wa" class="spp-btn spp-wa" target="_blank">Chat WhatsApp</a>
-    <a id="spp-detail" class="spp-btn spp-detail">Lihat Promo</a>
-
-    <label style="font-size:12px;">
-      <input type="checkbox" id="spp-hide"> Jangan tampilkan hari ini
-    </label>
+    <!-- CTA -->
+    <a href="https://wa.me/6285724887779?text=Halo saya mau ikut test drive Fronx" 
+       target="_blank" 
+       class="popup-cta">
+       Ikut Test Drive
+    </a>
 
   </div>
 </div>
@@ -1000,25 +980,13 @@ function gtag_report_conversion(url) {
 <script>
 (function(){
 
-/* ================= CONFIG ================= */
-
 const config = {
   active: true,
-  version: "mei2026",
-  startDate: "2026-05-01",
-  endDate: "2026-06-31",
-  delay: 2500
+  version: "fronx_april_juni_2026",
+  startDate: "2025-04-01",
+  endDate: "2026-06-30",
+  delay: 2000
 };
-
-const content = {
-  title: "🔥 DP 15 JUTA BAWA PULANG SUZUKI!",
-  subtitle: "Promo terbatas bulan ini • Cicilan ringan",
-  image: "popup.jpeg",
-  wa: "https://wa.me/6285724887779?text=Halo Promo Suzuki April",
-  detail: "#produk"
-};
-
-/* ================= VALIDATION ================= */
 
 if(!config.active) return;
 
@@ -1028,74 +996,52 @@ const end = new Date(config.endDate);
 
 if(now < start || now > end) return;
 
-/* ================= STORAGE ================= */
-
+/* ===== STORAGE ===== */
 const today = now.toDateString();
-const versionKey = "popup_version";
-const dateKey = "popup_date";
-const sessionKey = "popup_session";
 
-if(localStorage.getItem(versionKey) !== config.version){
-  localStorage.removeItem(dateKey);
-  localStorage.setItem(versionKey, config.version);
+if(localStorage.getItem("popup_version") !== config.version){
+  localStorage.removeItem("popup_date");
+  localStorage.setItem("popup_version", config.version);
 }
 
-if(localStorage.getItem(dateKey) === today) return;
-if(sessionStorage.getItem(sessionKey)) return;
+if(localStorage.getItem("popup_date") === today) return;
 
-/* ================= ELEMENT ================= */
+/* ===== ELEMENT ===== */
+const popup = document.getElementById("promo-popup");
+const closeBtn = document.getElementById("popupClose");
 
-const overlay = document.getElementById("spp-overlay");
-const closeBtn = document.getElementById("spp-close");
-const checkbox = document.getElementById("spp-hide");
-
-/* Inject Content */
-document.getElementById("spp-title").innerText = content.title;
-document.getElementById("spp-subtitle").innerText = content.subtitle;
-
-const img = document.getElementById("spp-image");
-img.src = content.image;
-img.onerror = () => img.style.display="none";
-
-document.getElementById("spp-wa").href = content.wa;
-document.getElementById("spp-detail").href = content.detail;
-
-/* ================= FUNCTION ================= */
-
+/* ===== FUNCTION ===== */
 function show(){
-  overlay.classList.add("active");
+  popup.classList.add("active");
   document.body.style.overflow="hidden";
-  sessionStorage.setItem(sessionKey,"1");
 }
 
 function close(){
-  overlay.classList.remove("active");
+  popup.classList.remove("active");
   document.body.style.overflow="";
-  if(checkbox.checked){
-    localStorage.setItem(dateKey,today);
-  }
+  localStorage.setItem("popup_date", today);
 }
 
-/* ================= EVENT ================= */
-
+/* ===== EVENT ===== */
 closeBtn.onclick = close;
 
-overlay.onclick = function(e){
-  if(e.target === overlay) close();
+popup.onclick = (e)=>{
+  if(e.target === popup) close();
 };
 
 document.addEventListener("keydown", e=>{
   if(e.key==="Escape") close();
 });
 
-/* ================= INIT ================= */
-
+/* ===== INIT ===== */
 window.addEventListener("load", ()=>{
   setTimeout(show, config.delay);
 });
 
 })();
 </script>
+
+<!-- ================= END POPUP ================= -->
   
 </body>
 </html>

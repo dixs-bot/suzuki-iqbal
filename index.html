@@ -888,5 +888,214 @@ function gtag_report_conversion(url) {
   </div>
   
   <script src="script.js"></script>
+
+<!-- ============================================
+     SUZUKI POPUP BANNER - OPTIMIZED VERSION
+     ============================================ -->
+
+<style>
+:root {
+  --spp-bg: #0f172a;
+  --spp-card: #1e293b;
+  --spp-accent: #f59e0b;
+  --spp-success: #25d366;
+  --spp-text: #ffffff;
+  --spp-muted: #94a3b8;
+  --spp-border: rgba(255,255,255,0.1);
+}
+
+/* Overlay */
+#spp-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10,22,40,0.85);
+  backdrop-filter: blur(10px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:99999;
+  opacity:0;
+  visibility:hidden;
+  transition:0.4s;
+}
+#spp-overlay.active {
+  opacity:1;
+  visibility:visible;
+}
+
+/* Container */
+#spp-container {
+  max-width:420px;
+  width:90%;
+  background:linear-gradient(145deg,#1e293b,#0f172a);
+  border-radius:16px;
+  padding:20px;
+  text-align:center;
+  transform:scale(0.85);
+  opacity:0;
+  transition:0.4s;
+}
+#spp-overlay.active #spp-container {
+  transform:scale(1);
+  opacity:1;
+}
+
+/* Close */
+.spp-close {
+  position:absolute;
+  top:10px;
+  right:10px;
+  cursor:pointer;
+  font-size:20px;
+  color:#aaa;
+}
+
+/* Image */
+.spp-image {
+  width:100%;
+  border-radius:10px;
+  margin:10px 0;
+}
+
+/* CTA */
+.spp-btn {
+  display:block;
+  padding:12px;
+  border-radius:8px;
+  margin:8px 0;
+  text-decoration:none;
+  font-weight:bold;
+}
+.spp-wa {
+  background:#25d366;
+  color:#fff;
+}
+.spp-detail {
+  border:1px solid #fff;
+  color:#fff;
+}
+
+</style>
+
+<div id="spp-overlay">
+  <div id="spp-container">
+
+    <div class="spp-close" id="spp-close">✕</div>
+
+    <h2 id="spp-title"></h2>
+    <p id="spp-subtitle"></p>
+
+    <img id="spp-image" class="spp-image" loading="lazy">
+
+    <a id="spp-wa" class="spp-btn spp-wa" target="_blank">Chat WhatsApp</a>
+    <a id="spp-detail" class="spp-btn spp-detail">Lihat Promo</a>
+
+    <label style="font-size:12px;">
+      <input type="checkbox" id="spp-hide"> Jangan tampilkan hari ini
+    </label>
+
+  </div>
+</div>
+
+<script>
+(function(){
+
+/* ================= CONFIG ================= */
+
+const config = {
+  active: true,
+  version: "mei2026",
+  startDate: "2026-05-01",
+  endDate: "2026-06-31",
+  delay: 2500
+};
+
+const content = {
+  title: "🔥 DP 15 JUTA BAWA PULANG SUZUKI!",
+  subtitle: "Promo terbatas bulan ini • Cicilan ringan",
+  image: "popup.png",
+  wa: "https://wa.me/6285724887779?text=Halo Promo Suzuki April",
+  detail: "#produk"
+};
+
+/* ================= VALIDATION ================= */
+
+if(!config.active) return;
+
+const now = new Date();
+const start = new Date(config.startDate);
+const end = new Date(config.endDate);
+
+if(now < start || now > end) return;
+
+/* ================= STORAGE ================= */
+
+const today = now.toDateString();
+const versionKey = "popup_version";
+const dateKey = "popup_date";
+const sessionKey = "popup_session";
+
+if(localStorage.getItem(versionKey) !== config.version){
+  localStorage.removeItem(dateKey);
+  localStorage.setItem(versionKey, config.version);
+}
+
+if(localStorage.getItem(dateKey) === today) return;
+if(sessionStorage.getItem(sessionKey)) return;
+
+/* ================= ELEMENT ================= */
+
+const overlay = document.getElementById("spp-overlay");
+const closeBtn = document.getElementById("spp-close");
+const checkbox = document.getElementById("spp-hide");
+
+/* Inject Content */
+document.getElementById("spp-title").innerText = content.title;
+document.getElementById("spp-subtitle").innerText = content.subtitle;
+
+const img = document.getElementById("spp-image");
+img.src = content.image;
+img.onerror = () => img.style.display="none";
+
+document.getElementById("spp-wa").href = content.wa;
+document.getElementById("spp-detail").href = content.detail;
+
+/* ================= FUNCTION ================= */
+
+function show(){
+  overlay.classList.add("active");
+  document.body.style.overflow="hidden";
+  sessionStorage.setItem(sessionKey,"1");
+}
+
+function close(){
+  overlay.classList.remove("active");
+  document.body.style.overflow="";
+  if(checkbox.checked){
+    localStorage.setItem(dateKey,today);
+  }
+}
+
+/* ================= EVENT ================= */
+
+closeBtn.onclick = close;
+
+overlay.onclick = function(e){
+  if(e.target === overlay) close();
+};
+
+document.addEventListener("keydown", e=>{
+  if(e.key==="Escape") close();
+});
+
+/* ================= INIT ================= */
+
+window.addEventListener("load", ()=>{
+  setTimeout(show, config.delay);
+});
+
+})();
+</script>
+  
 </body>
 </html>

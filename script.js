@@ -128,7 +128,50 @@ const products = [
       'Fitur': 'Power Steering, AC (tipe tertentu)'
     }
   },
-  {
+ {
+  id: 'carry-box',
+  name: 'Suzuki Carry Box',
+  category: 'commercial',
+  tagline: 'Solusi Angkutan Bisnis Modern',
+  description: 'Kendaraan niaga box andal dengan kapasitas besar, cocok untuk logistik, distribusi, kuliner, dan operasional bisnis harian. Irit, tangguh, dan siap mendukung usaha Anda.',
+  image: 'carry-box.png',
+  gallery: [
+    'carry-box1.png',
+    'carry-box2.png'
+  ],
+  variants: [
+    { name: 'Carry Box Standard', price: 198500000 },
+    { name: 'Carry Box AC PS', price: 206500000 },
+    { name: 'Carry Refrigerated Box', price: 228000000 },
+    { name: 'Carry Box Custom Fleet', price: 235000000 }
+  ],
+  colors: [
+    { name: 'Superior White', hex: '#F5F5F5' },
+    { name: 'Silky Silver', hex: '#B8B8B8' },
+    { name: 'Jet Black', hex: '#1A1A1A' }
+  ],
+  briefSpecs: [
+    'Box Besar & Luas',
+    'Cocok Untuk Logistik',
+    'Mesin 1.5L Irit',
+    'Rangka Kokoh',
+    'AC & Power Steering'
+  ],
+  specs: {
+    'Mesin': 'K15B 1.5L',
+    'Tenaga': '96 HP @ 6.000 rpm',
+    'Torsi': '135 Nm @ 4.400 rpm',
+    'Transmisi': '5MT',
+    'Bahan Bakar': 'Bensin RON 90+',
+    'Kapasitas Tangki': '42 Liter',
+    'Dimensi (P x L x T)': '4.350 x 1.765 x 2.200 mm',
+    'Wheelbase': '2.530 mm',
+    'Kapasitas Box': '± 6 Kubik',
+    'Daya Angkut': '± 1 Ton',
+    'Fitur': 'Power Steering, AC, Central Lock'
+  }
+},
+   {
     id: 'jimny-3door',
     name: 'Suzuki Jimny 3 Door',
     category: 'passenger',

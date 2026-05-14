@@ -140,10 +140,10 @@ const products = [
     'carry-box2.png'
   ],
   variants: [
-    { name: 'Carry Box Standard', price: 198500000 },
-    { name: 'Carry Box AC PS', price: 206500000 },
-    { name: 'Carry Refrigerated Box', price: 228000000 },
-    { name: 'Carry Box Custom Fleet', price: 235000000 }
+    { name: 'Carry Box Standard', price: 227300000 },
+    { name: 'Carry Box AC PS', price: 227300000 },
+    { name: 'Carry Refrigerated Box', price: 227300000 },
+    { name: 'Carry Box Custom Fleet', price: 227300000 }
   ],
   colors: [
     { name: 'Superior White', hex: '#F5F5F5' },

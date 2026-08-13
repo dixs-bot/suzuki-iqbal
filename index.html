@@ -957,7 +957,6 @@ function gtag_report_conversion(url) {
   opacity: 1;
 }
 
-/* Custom Scrollbar */
 #spp-container::-webkit-scrollbar { width: 4px; }
 #spp-container::-webkit-scrollbar-track { background: transparent; }
 #spp-container::-webkit-scrollbar-thumb {
@@ -975,10 +974,10 @@ function gtag_report_conversion(url) {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(0,0,0,0.55);
+  border: 1px solid rgba(255,255,255,0.12);
   border-radius: 50%;
-  color: var(--spp-muted);
+  color: #fff;
   font-size: 16px;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -986,10 +985,11 @@ function gtag_report_conversion(url) {
   line-height: 1;
   font-family: inherit;
   padding: 0;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 .spp-close-btn:hover {
-  background: rgba(255,255,255,0.14);
-  color: #fff;
+  background: rgba(255,255,255,0.2);
   transform: rotate(90deg);
 }
 .spp-close-btn:focus-visible {
@@ -997,129 +997,84 @@ function gtag_report_conversion(url) {
   outline-offset: 2px;
 }
 
-/* Badge */
-.spp-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: linear-gradient(135deg, var(--spp-red), var(--spp-red-dark));
-  color: #fff;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  padding: 5px 14px;
-  border-radius: 20px;
-  margin-bottom: 14px;
-  box-shadow: 0 4px 15px -3px rgba(230, 0, 18, 0.4);
-}
-
-/* Image Area */
-.spp-image-wrap {
+/* Poster Image - Full Width Hero */
+.spp-poster-wrap {
   position: relative;
-  margin: 0;
+  width: 100%;
   border-radius: var(--spp-radius) var(--spp-radius) 0 0;
   overflow: hidden;
   background: linear-gradient(135deg, #1a1f35, #0f1325);
-  min-height: 160px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
-.spp-image-wrap img {
+.spp-poster-wrap img {
   width: 100%;
   height: auto;
   display: block;
   object-fit: cover;
 }
-.spp-image-fallback {
-  padding: 32px 20px;
+
+/* Poster Fallback */
+.spp-poster-fallback {
+  padding: 36px 20px 32px;
   text-align: center;
-  width: 100%;
+  background: linear-gradient(160deg, #1a2332 0%, #0d1520 50%, #141e30 100%);
+  position: relative;
+  overflow: hidden;
 }
-.spp-event-logo {
-  font-size: 28px;
+.spp-poster-fallback::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at 30% 20%, rgba(37,211,102,0.06) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 80%, rgba(212,168,67,0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+.spp-fallback-logo {
+  position: relative;
+  font-size: 30px;
   font-weight: 800;
   color: var(--spp-gold);
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  line-height: 1.2;
-  text-shadow: 0 2px 20px rgba(212, 168, 67, 0.25);
-}
-.spp-event-sub-logo {
-  font-size: 11px;
-  color: var(--spp-muted);
   letter-spacing: 5px;
   text-transform: uppercase;
-  margin-top: 8px;
+  line-height: 1.2;
+  text-shadow: 0 2px 25px rgba(212,168,67,0.3);
 }
-.spp-deco-line {
+.spp-fallback-theme {
+  position: relative;
+  font-size: 9px;
+  color: var(--spp-muted);
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+.spp-fallback-line {
+  position: relative;
   width: 50px;
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--spp-gold), transparent);
-  margin: 16px auto;
+  margin: 18px auto;
   border-radius: 2px;
 }
+.spp-fallback-slogan {
+  position: relative;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--spp-text-secondary);
+  letter-spacing: 1px;
+  font-style: italic;
+}
+.spp-fallback-jimny {
+  position: relative;
+  font-size: 48px;
+  margin-top: 16px;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+}
 
-/* Content Area */
+/* Content Area - Compact, buttons only */
 .spp-content {
   padding: 20px 22px 18px;
-}
-.spp-title {
-  font-size: 20px;
-  font-weight: 800;
-  color: var(--spp-text);
-  line-height: 1.35;
-  margin: 0 0 8px;
-  letter-spacing: -0.3px;
-}
-.spp-highlight {
-  color: var(--spp-gold-light);
-}
-.spp-subtitle {
-  font-size: 13px;
-  color: var(--spp-text-secondary);
-  line-height: 1.65;
-  margin: 0 0 18px;
-}
-
-/* Event Info Card */
-.spp-event-info {
-  background: rgba(255,255,255,0.025);
-  border: 1px solid var(--spp-border);
-  border-radius: 12px;
-  padding: 16px;
-  margin: 0 0 20px;
-}
-.spp-info-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 6px 0;
-}
-.spp-info-row + .spp-info-row {
-  border-top: 1px solid var(--spp-border);
-  margin-top: 6px;
-  padding-top: 12px;
-}
-.spp-info-icon {
-  font-size: 16px;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-.spp-info-label {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--spp-muted);
-  margin-bottom: 3px;
-}
-.spp-info-value {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--spp-text);
-  line-height: 1.45;
 }
 
 /* Buttons */
@@ -1234,23 +1189,6 @@ function gtag_report_conversion(url) {
   .spp-content {
     padding: 18px 18px 14px;
   }
-  .spp-title {
-    font-size: 17px;
-  }
-  .spp-subtitle {
-    font-size: 12px;
-  }
-  .spp-image-wrap {
-    min-height: 130px;
-  }
-  .spp-event-logo {
-    font-size: 22px;
-    letter-spacing: 3px;
-  }
-  .spp-event-sub-logo {
-    font-size: 10px;
-    letter-spacing: 4px;
-  }
   .spp-btn {
     padding: 13px 16px;
     font-size: 13px;
@@ -1263,11 +1201,12 @@ function gtag_report_conversion(url) {
     height: 30px;
     font-size: 14px;
   }
-  .spp-event-info {
-    padding: 14px 12px;
+  .spp-fallback-logo {
+    font-size: 24px;
+    letter-spacing: 3px;
   }
-  .spp-info-value {
-    font-size: 12px;
+  .spp-fallback-jimny {
+    font-size: 38px;
   }
 }
 
@@ -1279,39 +1218,23 @@ function gtag_report_conversion(url) {
   #spp-container {
     max-height: 96vh;
   }
-  .spp-image-wrap {
-    min-height: 100px;
-  }
-  .spp-image-fallback {
+  .spp-poster-fallback {
     padding: 20px 16px;
   }
-  .spp-event-logo {
-    font-size: 20px;
+  .spp-fallback-logo {
+    font-size: 22px;
   }
-  .spp-event-info {
-    padding: 10px 12px;
-    margin-bottom: 14px;
+  .spp-fallback-jimny {
+    font-size: 32px;
+    margin-top: 10px;
   }
   .spp-content {
     padding: 14px 18px 12px;
-  }
-  .spp-title {
-    font-size: 16px;
-    margin-bottom: 4px;
-  }
-  .spp-subtitle {
-    font-size: 11px;
-    margin-bottom: 12px;
   }
   .spp-btn {
     padding: 11px 14px;
     font-size: 13px;
     margin-bottom: 8px;
-  }
-  .spp-badge {
-    margin-bottom: 8px;
-    padding: 4px 10px;
-    font-size: 9px;
   }
 }
 </style>
@@ -1321,31 +1244,9 @@ function gtag_report_conversion(url) {
 
     <button class="spp-close-btn" id="spp-close-btn" type="button" aria-label="Tutup popup">✕</button>
 
-    <div class="spp-image-wrap" id="spp-image-wrap"></div>
+    <div class="spp-poster-wrap" id="spp-poster-wrap"></div>
 
     <div class="spp-content">
-      <div style="text-align:center;">
-        <div class="spp-badge">✦ GIIAS 2026</div>
-        <h2 class="spp-title" id="spp-title"></h2>
-        <p class="spp-subtitle" id="spp-subtitle"></p>
-      </div>
-
-      <div class="spp-event-info">
-        <div class="spp-info-row">
-          <span class="spp-info-icon">📅</span>
-          <div>
-            <div class="spp-info-label">Tanggal Event</div>
-            <div class="spp-info-value">9 – 13 September 2026</div>
-          </div>
-        </div>
-        <div class="spp-info-row">
-          <span class="spp-info-icon">📍</span>
-          <div>
-            <div class="spp-info-label">Lokasi</div>
-            <div class="spp-info-value">Sudirman Grand Ballroom<br>Jl. Sudirman No. 620, Kota Bandung</div>
-          </div>
-        </div>
-      </div>
 
       <a id="spp-wa-btn" class="spp-btn spp-btn-wa" target="_blank" rel="noopener noreferrer">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -1377,25 +1278,25 @@ function gtag_report_conversion(url) {
     delay: 2500
   };
 
-  /* Nomor WhatsApp dari config website (tidak diubah) */
   var waNumber = '6285724887779';
   var waMessage = 'Halo, saya tertarik dengan promo Suzuki GIIAS 2026 di Bandung. Saya ingin mendapatkan informasi mengenai harga, promo, dan unit Suzuki yang tersedia.';
 
-  /* Kandidat path gambar - akan dicoba satu per satu */
-  var imageCandidates = [
-    'images/Popupgias.png',
+  /* Poster GIIAS 2026 */
+  var posterUrl = 'https://z-cdn-media.chatglm.cn/files/1b1fdb5d-9a82-4ac5-b93a-4fb1f422b9b6.png?auth_key=1886632734-001b48e51d8244b6a1ed14e2c1864dd9-0-502d626f31dcb39ec35b791525e79d1d';
+
+  /* Fallback lokal */
+  var localFallbacks = [
+    'images/giias-2026.jpg',
     'images/giias2026.jpg',
     'images/promo/giias-2026.jpg',
     'images/promo-giias-2026.jpg',
     'images/suzuki-giias.jpg',
-    'images/banner-giias.jpg',
-    'images/suzuki-giias-2026.jpg'
+    'images/banner-giias.jpg'
   ];
 
   /* ==================== TIMEZONE: ASIA/JAKARTA ==================== */
   function getJakartaDateStr() {
     try {
-      /* Menggunakan en-CA untuk format YYYY-MM-DD yang konsisten */
       var parts = new Date().toLocaleString('en-CA', {
         timeZone: 'Asia/Jakarta',
         year: 'numeric',
@@ -1404,10 +1305,8 @@ function gtag_report_conversion(url) {
       }).split('-');
       return parts[0] + '-' + parts[1] + '-' + parts[2];
     } catch (e) {
-      /* Fallback jika browser tidak support timeZone */
       var d = new Date();
       var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
-      /* Offset WIB = +7 jam dari UTC */
       var jakarta = new Date(utc + (7 * 3600000));
       var mm = String(jakarta.getMonth() + 1).padStart(2, '0');
       var dd = String(jakarta.getDate()).padStart(2, '0');
@@ -1419,8 +1318,6 @@ function gtag_report_conversion(url) {
   if (!config.active) return;
 
   var todayStr = getJakartaDateStr();
-
-  /* Perbandingan string YYYY-MM-DD: aman tanpa masalah timezone */
   if (todayStr < config.startDate || todayStr > config.endDate) return;
 
   /* ==================== STORAGE CONTROL ==================== */
@@ -1430,55 +1327,36 @@ function gtag_report_conversion(url) {
   var KEY_SESS = SP + 'sess';
 
   try {
-    /* Jika versi berubah, reset tanggal agar popup tampil lagi */
     if (localStorage.getItem(KEY_VER) !== config.version) {
       localStorage.removeItem(KEY_DATE);
       localStorage.setItem(KEY_VER, config.version);
     }
-
-    /* Cek "jangan tampilkan hari ini" */
     if (localStorage.getItem(KEY_DATE) === todayStr) return;
-
-    /* Cek session: hanya muncul sekali per session */
     if (sessionStorage.getItem(KEY_SESS)) return;
-  } catch (e) {
-    /* Storage tidak tersedia (private mode, dll) - lanjutkan */
-  }
+  } catch (e) {}
 
   /* ==================== AMBIL ELEMEN DOM ==================== */
   var overlay = document.getElementById('spp-overlay');
   var container = document.getElementById('spp-container');
   var closeBtn = document.getElementById('spp-close-btn');
   var checkbox = document.getElementById('spp-hide-today');
-  var imageWrap = document.getElementById('spp-image-wrap');
+  var posterWrap = document.getElementById('spp-poster-wrap');
 
-  /* Safety: jangan lanjut jika elemen utama tidak ditemukan */
-  if (!overlay || !container) return;
+  if (!overlay || !container || !posterWrap) return;
 
   /* ==================== INJECT KONTEN ==================== */
-  var titleEl = document.getElementById('spp-title');
-  var subtitleEl = document.getElementById('spp-subtitle');
   var waBtn = document.getElementById('spp-wa-btn');
   var detailBtn = document.getElementById('spp-detail-btn');
 
-  if (titleEl) {
-    titleEl.innerHTML = '\uD83D\uDD25 <span class="spp-highlight">GIIAS 2026</span> \u2013 Special Suzuki Offer';
-  }
-  if (subtitleEl) {
-    subtitleEl.textContent = 'Dapatkan penawaran spesial Suzuki selama event berlangsung. Booking sekarang dan dapatkan promo terbaik!';
-  }
-
-  /* WhatsApp: URL encoding yang benar */
   if (waBtn) {
     waBtn.href = 'https://wa.me/' + waNumber + '?text=' + encodeURIComponent(waMessage);
   }
 
-  /* Tombol Detail: tutup popup lalu navigasi */
   if (detailBtn) {
     detailBtn.addEventListener('click', function(e) {
+      e.preventDefault();
       var href = detailBtn.getAttribute('href') || '#produk';
       closePopup();
-      /* Beri waktu animasi tutup selesai */
       setTimeout(function() {
         var target = document.querySelector(href);
         if (target) {
@@ -1490,39 +1368,51 @@ function gtag_report_conversion(url) {
     });
   }
 
-  /* ==================== SISTEM GAMBAR (dengan fallback) ==================== */
-  var imgIdx = 0;
+  /* ==================== SISTEM GAMBAR POSTER ==================== */
+  function loadPoster() {
+    var img = new Image();
+    img.onload = function() {
+      posterWrap.innerHTML = '';
+      img.alt = 'GIIAS 2026 Suzuki Exhibition - Experience The Future of Mobility';
+      img.style.cssText = 'width:100%;height:auto;display:block;';
+      posterWrap.appendChild(img);
+    };
+    img.onerror = function() {
+      tryLocalFallbacks(0);
+    };
+    img.src = posterUrl;
+  }
 
-  function tryLoadImage() {
-    if (imgIdx >= imageCandidates.length) {
-      showImageFallback();
+  function tryLocalFallbacks(idx) {
+    if (idx >= localFallbacks.length) {
+      showPosterFallback();
       return;
     }
     var img = new Image();
     img.onload = function() {
-      imageWrap.innerHTML = '';
+      posterWrap.innerHTML = '';
       img.alt = 'GIIAS 2026 Suzuki Exhibition';
-      img.style.cssText = 'width:100%;height:auto;display:block;object-fit:cover;';
-      imageWrap.appendChild(img);
+      img.style.cssText = 'width:100%;height:auto;display:block;';
+      posterWrap.appendChild(img);
     };
     img.onerror = function() {
-      imgIdx++;
-      tryLoadImage();
+      tryLocalFallbacks(idx + 1);
     };
-    img.src = imageCandidates[imgIdx];
+    img.src = localFallbacks[idx];
   }
 
-  function showImageFallback() {
-    /* Fallback visual jika tidak ada gambar yang ditemukan */
-    imageWrap.innerHTML =
-      '<div class="spp-image-fallback">' +
-        '<div class="spp-event-logo">GIIAS 2026</div>' +
-        '<div class="spp-deco-line"></div>' +
-        '<div class="spp-event-sub-logo">Suzuki Special Exhibition</div>' +
+  function showPosterFallback() {
+    posterWrap.innerHTML =
+      '<div class="spp-poster-fallback">' +
+        '<div class="spp-fallback-logo">GIIAS 2026</div>' +
+        '<div class="spp-fallback-theme">Experience The Future of Mobility</div>' +
+        '<div class="spp-fallback-line"></div>' +
+        '<div class="spp-fallback-slogan">Drive Innovation Towards Tomorrow</div>' +
+        '<div class="spp-fallback-jimny">\uD83D\uDE97</div>' +
       '</div>';
   }
 
-  tryLoadImage();
+  loadPoster();
 
   /* ==================== FUNGSI POPUP ==================== */
   var isOpen = false;
@@ -1532,7 +1422,6 @@ function gtag_report_conversion(url) {
     isOpen = true;
     overlay.classList.add('spp-active');
     document.body.style.overflow = 'hidden';
-    /* Touch lock untuk iOS Safari */
     document.body.style.touchAction = 'none';
     try {
       sessionStorage.setItem(KEY_SESS, '1');
@@ -1561,14 +1450,12 @@ function gtag_report_conversion(url) {
     });
   }
 
-  /* Tutup saat klik overlay (di luar container) */
   overlay.addEventListener('click', function(e) {
     if (e.target === overlay) {
       closePopup();
     }
   });
 
-  /* Tutup dengan tombol Escape */
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && isOpen) {
       e.preventDefault();
@@ -1583,7 +1470,6 @@ function gtag_report_conversion(url) {
     }, config.delay);
   }
 
-  /* Pastikan DOM dan semua resource sudah siap */
   if (document.readyState === 'complete') {
     init();
   } else {
@@ -1591,8 +1477,6 @@ function gtag_report_conversion(url) {
   }
 
   /* ==================== SAFETY NETS ==================== */
-
-  /* 1. Jika popup elemen dihapus dari DOM secara eksternal, pastikan body scroll kembali */
   var bodyObserver = new MutationObserver(function() {
     if (!document.body.contains(overlay) && isOpen) {
       document.body.style.overflow = '';
@@ -1602,12 +1486,10 @@ function gtag_report_conversion(url) {
   });
   bodyObserver.observe(document.body, { childList: true, subtree: true });
 
-  /* 2. Cleanup observer saat halaman unload */
   window.addEventListener('beforeunload', function() {
     bodyObserver.disconnect();
   });
 
-  /* 3. Double-check: pastikan overflow tidak terkunci setelah animasi selesai */
   overlay.addEventListener('transitionend', function(e) {
     if (e.propertyName === 'opacity' && !overlay.classList.contains('spp-active')) {
       if (document.body.style.overflow === 'hidden') {

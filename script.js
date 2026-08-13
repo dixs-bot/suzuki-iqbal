@@ -500,6 +500,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initButtonRipple();
   initStatsCounter();
   renderLandingPages();
+  initGlobalSimulation();
   renderDeliveryGallery();
   initVideoFallback();
   initTestDrive();

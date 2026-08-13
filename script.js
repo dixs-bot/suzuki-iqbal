@@ -10,7 +10,7 @@ const products = [
     category: 'passenger',
     tagline: '7-Seater SUV Hybrid',
     description: 'SUV 7 penumpang dengan teknologi Smart Hybrid, ground clearance tinggi, dan desain maskulin. Cocok untuk keluarga aktif yang butuh kenyamanan dan efisiensi BBM.',
-    image: 'xl7-kuro.png',
+    image: 'newxl7.png',
     gallery: [
       'xl7-kuro1.png',
     ],

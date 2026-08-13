@@ -494,7 +494,6 @@ document.addEventListener('DOMContentLoaded', function () {
   initScrollReveal();
   initCategoryFilter();
   renderProducts();
-  initGlobalSimulation();
   initModal();
   initFAQ();
   initContactForm();

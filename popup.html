@@ -1,207 +1,729 @@
 <!-- ============================================
-     SUZUKI POPUP BANNER - OPTIMIZED VERSION
+     SUZUKI POPUP BANNER - GIIAS SEPTEMBER 2026
      ============================================ -->
 
 <style>
+/* ===== SUZUKI POPUP PROMO - ISOLATED NAMESPACE ===== */
 :root {
-  --spp-bg: #0f172a;
-  --spp-card: #1e293b;
-  --spp-accent: #f59e0b;
+  --spp-bg: #0a0e1a;
+  --spp-card: #141b2d;
+  --spp-card-light: #1c2540;
+  --spp-red: #E60012;
+  --spp-red-dark: #c40010;
+  --spp-gold: #d4a843;
+  --spp-gold-light: #f0d078;
   --spp-success: #25d366;
   --spp-text: #ffffff;
-  --spp-muted: #94a3b8;
-  --spp-border: rgba(255,255,255,0.1);
+  --spp-text-secondary: #cbd5e1;
+  --spp-muted: #64748b;
+  --spp-border: rgba(255,255,255,0.08);
+  --spp-radius: 18px;
 }
 
-/* Overlay */
 #spp-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(10,22,40,0.85);
-  backdrop-filter: blur(10px);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:99999;
-  opacity:0;
-  visibility:hidden;
-  transition:0.4s;
+  background: rgba(5, 10, 20, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.45s ease, visibility 0.45s ease;
+  padding: 16px;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
-#spp-overlay.active {
-  opacity:1;
-  visibility:visible;
+#spp-overlay.spp-active {
+  opacity: 1;
+  visibility: visible;
 }
 
-/* Container */
 #spp-container {
-  max-width:420px;
-  width:90%;
-  background:linear-gradient(145deg,#1e293b,#0f172a);
-  border-radius:16px;
-  padding:20px;
-  text-align:center;
-  transform:scale(0.85);
-  opacity:0;
-  transition:0.4s;
+  position: relative;
+  max-width: 440px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: linear-gradient(165deg, var(--spp-card-light) 0%, var(--spp-card) 40%, var(--spp-bg) 100%);
+  border: 1px solid var(--spp-border);
+  border-radius: var(--spp-radius);
+  box-shadow:
+    0 0 0 1px rgba(212, 168, 67, 0.08),
+    0 25px 60px -12px rgba(0,0,0,0.7),
+    0 0 80px -20px rgba(230, 0, 18, 0.12);
+  transform: scale(0.88) translateY(20px);
+  opacity: 0;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s ease;
+  -webkit-overflow-scrolling: touch;
 }
-#spp-overlay.active #spp-container {
-  transform:scale(1);
-  opacity:1;
-}
-
-/* Close */
-.spp-close {
-  position:absolute;
-  top:10px;
-  right:10px;
-  cursor:pointer;
-  font-size:20px;
-  color:#aaa;
+#spp-overlay.spp-active #spp-container {
+  transform: scale(1) translateY(0);
+  opacity: 1;
 }
 
-/* Image */
-.spp-image {
-  width:100%;
-  border-radius:10px;
-  margin:10px 0;
+/* Custom Scrollbar */
+#spp-container::-webkit-scrollbar { width: 4px; }
+#spp-container::-webkit-scrollbar-track { background: transparent; }
+#spp-container::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.12);
+  border-radius: 4px;
 }
 
-/* CTA */
+/* Close Button */
+.spp-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 50%;
+  color: var(--spp-muted);
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  z-index: 10;
+  line-height: 1;
+  font-family: inherit;
+  padding: 0;
+}
+.spp-close-btn:hover {
+  background: rgba(255,255,255,0.14);
+  color: #fff;
+  transform: rotate(90deg);
+}
+.spp-close-btn:focus-visible {
+  outline: 2px solid var(--spp-gold);
+  outline-offset: 2px;
+}
+
+/* Badge */
+.spp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, var(--spp-red), var(--spp-red-dark));
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 15px -3px rgba(230, 0, 18, 0.4);
+}
+
+/* Image Area */
+.spp-image-wrap {
+  position: relative;
+  margin: 0;
+  border-radius: var(--spp-radius) var(--spp-radius) 0 0;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a1f35, #0f1325);
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.spp-image-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.spp-image-fallback {
+  padding: 32px 20px;
+  text-align: center;
+  width: 100%;
+}
+.spp-event-logo {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--spp-gold);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-shadow: 0 2px 20px rgba(212, 168, 67, 0.25);
+}
+.spp-event-sub-logo {
+  font-size: 11px;
+  color: var(--spp-muted);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+.spp-deco-line {
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--spp-gold), transparent);
+  margin: 16px auto;
+  border-radius: 2px;
+}
+
+/* Content Area */
+.spp-content {
+  padding: 20px 22px 18px;
+}
+.spp-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--spp-text);
+  line-height: 1.35;
+  margin: 0 0 8px;
+  letter-spacing: -0.3px;
+}
+.spp-highlight {
+  color: var(--spp-gold-light);
+}
+.spp-subtitle {
+  font-size: 13px;
+  color: var(--spp-text-secondary);
+  line-height: 1.65;
+  margin: 0 0 18px;
+}
+
+/* Event Info Card */
+.spp-event-info {
+  background: rgba(255,255,255,0.025);
+  border: 1px solid var(--spp-border);
+  border-radius: 12px;
+  padding: 16px;
+  margin: 0 0 20px;
+}
+.spp-info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 6px 0;
+}
+.spp-info-row + .spp-info-row {
+  border-top: 1px solid var(--spp-border);
+  margin-top: 6px;
+  padding-top: 12px;
+}
+.spp-info-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.spp-info-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--spp-muted);
+  margin-bottom: 3px;
+}
+.spp-info-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--spp-text);
+  line-height: 1.45;
+}
+
+/* Buttons */
 .spp-btn {
-  display:block;
-  padding:12px;
-  border-radius:8px;
-  margin:8px 0;
-  text-decoration:none;
-  font-weight:bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  letter-spacing: 0.2px;
+  font-family: inherit;
+  text-align: center;
 }
-.spp-wa {
-  background:#25d366;
-  color:#fff;
+.spp-btn:focus-visible {
+  outline: 2px solid var(--spp-gold);
+  outline-offset: 2px;
 }
-.spp-detail {
-  border:1px solid #fff;
-  color:#fff;
+.spp-btn-wa {
+  background: linear-gradient(135deg, #25d366, #1da851);
+  color: #fff;
+  box-shadow: 0 6px 20px -4px rgba(37, 211, 102, 0.4);
+  margin-bottom: 10px;
+}
+.spp-btn-wa:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px -4px rgba(37, 211, 102, 0.5);
+}
+.spp-btn-wa:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px -2px rgba(37, 211, 102, 0.35);
+}
+.spp-btn-detail {
+  background: transparent;
+  color: var(--spp-text);
+  border: 1px solid rgba(255,255,255,0.14);
+  margin-bottom: 16px;
+}
+.spp-btn-detail:hover {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.28);
+  transform: translateY(-1px);
+}
+.spp-btn-detail:active {
+  transform: translateY(0);
 }
 
+/* Checkbox */
+.spp-dont-show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.spp-dont-show input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--spp-muted);
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+.spp-dont-show input[type="checkbox"]:checked {
+  background: var(--spp-red);
+  border-color: var(--spp-red);
+}
+.spp-dont-show input[type="checkbox"]:checked::after {
+  content: '\2713';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+}
+.spp-dont-show input[type="checkbox"]:focus-visible {
+  outline: 2px solid var(--spp-gold);
+  outline-offset: 2px;
+}
+.spp-dont-show label {
+  font-size: 12px;
+  color: var(--spp-muted);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  #spp-overlay {
+    padding: 10px;
+    align-items: flex-end;
+  }
+  #spp-container {
+    max-width: 100%;
+    max-height: 85vh;
+    border-radius: 16px 16px 10px 10px;
+  }
+  .spp-content {
+    padding: 18px 18px 14px;
+  }
+  .spp-title {
+    font-size: 17px;
+  }
+  .spp-subtitle {
+    font-size: 12px;
+  }
+  .spp-image-wrap {
+    min-height: 130px;
+  }
+  .spp-event-logo {
+    font-size: 22px;
+    letter-spacing: 3px;
+  }
+  .spp-event-sub-logo {
+    font-size: 10px;
+    letter-spacing: 4px;
+  }
+  .spp-btn {
+    padding: 13px 16px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
+  .spp-close-btn {
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+  .spp-event-info {
+    padding: 14px 12px;
+  }
+  .spp-info-value {
+    font-size: 12px;
+  }
+}
+
+@media (max-height: 640px) {
+  #spp-overlay {
+    align-items: center;
+    padding: 6px;
+  }
+  #spp-container {
+    max-height: 96vh;
+  }
+  .spp-image-wrap {
+    min-height: 100px;
+  }
+  .spp-image-fallback {
+    padding: 20px 16px;
+  }
+  .spp-event-logo {
+    font-size: 20px;
+  }
+  .spp-event-info {
+    padding: 10px 12px;
+    margin-bottom: 14px;
+  }
+  .spp-content {
+    padding: 14px 18px 12px;
+  }
+  .spp-title {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  .spp-subtitle {
+    font-size: 11px;
+    margin-bottom: 12px;
+  }
+  .spp-btn {
+    padding: 11px 14px;
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+  .spp-badge {
+    margin-bottom: 8px;
+    padding: 4px 10px;
+    font-size: 9px;
+  }
+}
 </style>
 
-<div id="spp-overlay">
+<div id="spp-overlay" role="dialog" aria-modal="true" aria-label="Promo Suzuki GIIAS 2026">
   <div id="spp-container">
 
-    <div class="spp-close" id="spp-close">✕</div>
+    <button class="spp-close-btn" id="spp-close-btn" type="button" aria-label="Tutup popup">✕</button>
 
-    <h2 id="spp-title"></h2>
-    <p id="spp-subtitle"></p>
+    <div class="spp-image-wrap" id="spp-image-wrap"></div>
 
-    <img id="spp-image" class="spp-image" loading="lazy">
+    <div class="spp-content">
+      <div style="text-align:center;">
+        <div class="spp-badge">✦ GIIAS 2026</div>
+        <h2 class="spp-title" id="spp-title"></h2>
+        <p class="spp-subtitle" id="spp-subtitle"></p>
+      </div>
 
-    <a id="spp-wa" class="spp-btn spp-wa" target="_blank">Chat WhatsApp</a>
-    <a id="spp-detail" class="spp-btn spp-detail">Lihat Promo</a>
+      <div class="spp-event-info">
+        <div class="spp-info-row">
+          <span class="spp-info-icon">📅</span>
+          <div>
+            <div class="spp-info-label">Tanggal Event</div>
+            <div class="spp-info-value">9 – 13 September 2026</div>
+          </div>
+        </div>
+        <div class="spp-info-row">
+          <span class="spp-info-icon">📍</span>
+          <div>
+            <div class="spp-info-label">Lokasi</div>
+            <div class="spp-info-value">Sudirman Grand Ballroom<br>Jl. Sudirman No. 620, Kota Bandung</div>
+          </div>
+        </div>
+      </div>
 
-    <label style="font-size:12px;">
-      <input type="checkbox" id="spp-hide"> Jangan tampilkan hari ini
-    </label>
+      <a id="spp-wa-btn" class="spp-btn spp-btn-wa" target="_blank" rel="noopener noreferrer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Chat via WhatsApp
+      </a>
+      <a id="spp-detail-btn" class="spp-btn spp-btn-detail" href="#produk">
+        Lihat Detail GIIAS 2026
+      </a>
+
+      <div class="spp-dont-show">
+        <input type="checkbox" id="spp-hide-today">
+        <label for="spp-hide-today">Jangan tampilkan hari ini</label>
+      </div>
+    </div>
 
   </div>
 </div>
 
 <script>
-(function(){
+(function() {
+  'use strict';
 
-/* ================= CONFIG ================= */
+  /* ==================== KONFIGURASI ==================== */
+  var config = {
+    active: true,
+    version: 'giias-september2026',
+    startDate: '2026-08-12',
+    endDate: '2026-09-30',
+    delay: 2500
+  };
 
-const config = {
-  active: true,
-  version: "agustus-september2026",
-  startDate: "2026-08-12",
-  endDate: "2026-09-30",
-  delay: 2500
-};
+  /* Nomor WhatsApp dari config website (tidak diubah) */
+  var waNumber = '6285724887779';
+  var waMessage = 'Halo, saya tertarik dengan promo Suzuki GIIAS 2026 di Bandung. Saya ingin mendapatkan informasi mengenai harga, promo, dan unit Suzuki yang tersedia.';
 
-const content = {
-  title: "🔥 DP 15 JUTA BAWA PULANG SUZUKI!",
-  subtitle: "Promo terbatas bulan ini • Cicilan ringan",
-  image: "images/promo-mei.jpg",
-  wa: "https://wa.me/6285724887779?text=Halo Promo Suzuki Mei",
-  detail: "#produk"
-};
+  /* Kandidat path gambar - akan dicoba satu per satu */
+  var imageCandidates = [
+    'images/giias-2026.jpg',
+    'images/giias2026.jpg',
+    'images/promo/giias-2026.jpg',
+    'images/promo-giias-2026.jpg',
+    'images/suzuki-giias.jpg',
+    'images/banner-giias.jpg',
+    'images/suzuki-giias-2026.jpg'
+  ];
 
-/* ================= VALIDATION ================= */
-
-if(!config.active) return;
-
-const now = new Date();
-const start = new Date(config.startDate);
-const end = new Date(config.endDate);
-
-if(now < start || now > end) return;
-
-/* ================= STORAGE ================= */
-
-const today = now.toDateString();
-const versionKey = "popup_version";
-const dateKey = "popup_date";
-const sessionKey = "popup_session";
-
-if(localStorage.getItem(versionKey) !== config.version){
-  localStorage.removeItem(dateKey);
-  localStorage.setItem(versionKey, config.version);
-}
-
-if(localStorage.getItem(dateKey) === today) return;
-if(sessionStorage.getItem(sessionKey)) return;
-
-/* ================= ELEMENT ================= */
-
-const overlay = document.getElementById("spp-overlay");
-const closeBtn = document.getElementById("spp-close");
-const checkbox = document.getElementById("spp-hide");
-
-/* Inject Content */
-document.getElementById("spp-title").innerText = content.title;
-document.getElementById("spp-subtitle").innerText = content.subtitle;
-
-const img = document.getElementById("spp-image");
-img.src = content.image;
-img.onerror = () => img.style.display="none";
-
-document.getElementById("spp-wa").href = content.wa;
-document.getElementById("spp-detail").href = content.detail;
-
-/* ================= FUNCTION ================= */
-
-function show(){
-  overlay.classList.add("active");
-  document.body.style.overflow="hidden";
-  sessionStorage.setItem(sessionKey,"1");
-}
-
-function close(){
-  overlay.classList.remove("active");
-  document.body.style.overflow="";
-  if(checkbox.checked){
-    localStorage.setItem(dateKey,today);
+  /* ==================== TIMEZONE: ASIA/JAKARTA ==================== */
+  function getJakartaDateStr() {
+    try {
+      /* Menggunakan en-CA untuk format YYYY-MM-DD yang konsisten */
+      var parts = new Date().toLocaleString('en-CA', {
+        timeZone: 'Asia/Jakarta',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit'
+      }).split('-');
+      return parts[0] + '-' + parts[1] + '-' + parts[2];
+    } catch (e) {
+      /* Fallback jika browser tidak support timeZone */
+      var d = new Date();
+      var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+      /* Offset WIB = +7 jam dari UTC */
+      var jakarta = new Date(utc + (7 * 3600000));
+      var mm = String(jakarta.getMonth() + 1).padStart(2, '0');
+      var dd = String(jakarta.getDate()).padStart(2, '0');
+      return jakarta.getFullYear() + '-' + mm + '-' + dd;
+    }
   }
-}
 
-/* ================= EVENT ================= */
+  /* ==================== VALIDASI AKTIF & PERIODE ==================== */
+  if (!config.active) return;
 
-closeBtn.onclick = close;
+  var todayStr = getJakartaDateStr();
 
-overlay.onclick = function(e){
-  if(e.target === overlay) close();
-};
+  /* Perbandingan string YYYY-MM-DD: aman tanpa masalah timezone */
+  if (todayStr < config.startDate || todayStr > config.endDate) return;
 
-document.addEventListener("keydown", e=>{
-  if(e.key==="Escape") close();
-});
+  /* ==================== STORAGE CONTROL ==================== */
+  var SP = 'spp_';
+  var KEY_VER = SP + 'ver';
+  var KEY_DATE = SP + 'date';
+  var KEY_SESS = SP + 'sess';
 
-/* ================= INIT ================= */
+  try {
+    /* Jika versi berubah, reset tanggal agar popup tampil lagi */
+    if (localStorage.getItem(KEY_VER) !== config.version) {
+      localStorage.removeItem(KEY_DATE);
+      localStorage.setItem(KEY_VER, config.version);
+    }
 
-window.addEventListener("load", ()=>{
-  setTimeout(show, config.delay);
-});
+    /* Cek "jangan tampilkan hari ini" */
+    if (localStorage.getItem(KEY_DATE) === todayStr) return;
+
+    /* Cek session: hanya muncul sekali per session */
+    if (sessionStorage.getItem(KEY_SESS)) return;
+  } catch (e) {
+    /* Storage tidak tersedia (private mode, dll) - lanjutkan */
+  }
+
+  /* ==================== AMBIL ELEMEN DOM ==================== */
+  var overlay = document.getElementById('spp-overlay');
+  var container = document.getElementById('spp-container');
+  var closeBtn = document.getElementById('spp-close-btn');
+  var checkbox = document.getElementById('spp-hide-today');
+  var imageWrap = document.getElementById('spp-image-wrap');
+
+  /* Safety: jangan lanjut jika elemen utama tidak ditemukan */
+  if (!overlay || !container) return;
+
+  /* ==================== INJECT KONTEN ==================== */
+  var titleEl = document.getElementById('spp-title');
+  var subtitleEl = document.getElementById('spp-subtitle');
+  var waBtn = document.getElementById('spp-wa-btn');
+  var detailBtn = document.getElementById('spp-detail-btn');
+
+  if (titleEl) {
+    titleEl.innerHTML = '\uD83D\uDD25 <span class="spp-highlight">GIIAS 2026</span> \u2013 Special Suzuki Offer';
+  }
+  if (subtitleEl) {
+    subtitleEl.textContent = 'Dapatkan penawaran spesial Suzuki selama event berlangsung. Booking sekarang dan dapatkan promo terbaik!';
+  }
+
+  /* WhatsApp: URL encoding yang benar */
+  if (waBtn) {
+    waBtn.href = 'https://wa.me/' + waNumber + '?text=' + encodeURIComponent(waMessage);
+  }
+
+  /* Tombol Detail: tutup popup lalu navigasi */
+  if (detailBtn) {
+    detailBtn.addEventListener('click', function(e) {
+      var href = detailBtn.getAttribute('href') || '#produk';
+      closePopup();
+      /* Beri waktu animasi tutup selesai */
+      setTimeout(function() {
+        var target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          window.location.hash = href;
+        }
+      }, 350);
+    });
+  }
+
+  /* ==================== SISTEM GAMBAR (dengan fallback) ==================== */
+  var imgIdx = 0;
+
+  function tryLoadImage() {
+    if (imgIdx >= imageCandidates.length) {
+      showImageFallback();
+      return;
+    }
+    var img = new Image();
+    img.onload = function() {
+      imageWrap.innerHTML = '';
+      img.alt = 'GIIAS 2026 Suzuki Exhibition';
+      img.style.cssText = 'width:100%;height:auto;display:block;object-fit:cover;';
+      imageWrap.appendChild(img);
+    };
+    img.onerror = function() {
+      imgIdx++;
+      tryLoadImage();
+    };
+    img.src = imageCandidates[imgIdx];
+  }
+
+  function showImageFallback() {
+    /* Fallback visual jika tidak ada gambar yang ditemukan */
+    imageWrap.innerHTML =
+      '<div class="spp-image-fallback">' +
+        '<div class="spp-event-logo">GIIAS 2026</div>' +
+        '<div class="spp-deco-line"></div>' +
+        '<div class="spp-event-sub-logo">Suzuki Special Exhibition</div>' +
+      '</div>';
+  }
+
+  tryLoadImage();
+
+  /* ==================== FUNGSI POPUP ==================== */
+  var isOpen = false;
+
+  function showPopup() {
+    if (isOpen) return;
+    isOpen = true;
+    overlay.classList.add('spp-active');
+    document.body.style.overflow = 'hidden';
+    /* Touch lock untuk iOS Safari */
+    document.body.style.touchAction = 'none';
+    try {
+      sessionStorage.setItem(KEY_SESS, '1');
+    } catch (e) {}
+  }
+
+  function closePopup() {
+    if (!isOpen) return;
+    isOpen = false;
+    overlay.classList.remove('spp-active');
+    document.body.style.overflow = '';
+    document.body.style.touchAction = '';
+    try {
+      if (checkbox && checkbox.checked) {
+        localStorage.setItem(KEY_DATE, todayStr);
+      }
+    } catch (e) {}
+  }
+
+  /* ==================== EVENT LISTENERS ==================== */
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      closePopup();
+    });
+  }
+
+  /* Tutup saat klik overlay (di luar container) */
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) {
+      closePopup();
+    }
+  });
+
+  /* Tutup dengan tombol Escape */
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && isOpen) {
+      e.preventDefault();
+      closePopup();
+    }
+  });
+
+  /* ==================== INISIALISASI ==================== */
+  function init() {
+    setTimeout(function() {
+      showPopup();
+    }, config.delay);
+  }
+
+  /* Pastikan DOM dan semua resource sudah siap */
+  if (document.readyState === 'complete') {
+    init();
+  } else {
+    window.addEventListener('load', init);
+  }
+
+  /* ==================== SAFETY NETS ==================== */
+
+  /* 1. Jika popup elemen dihapus dari DOM secara eksternal, pastikan body scroll kembali */
+  var bodyObserver = new MutationObserver(function() {
+    if (!document.body.contains(overlay) && isOpen) {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+      isOpen = false;
+    }
+  });
+  bodyObserver.observe(document.body, { childList: true, subtree: true });
+
+  /* 2. Cleanup observer saat halaman unload */
+  window.addEventListener('beforeunload', function() {
+    bodyObserver.disconnect();
+  });
+
+  /* 3. Double-check: pastikan overflow tidak terkunci setelah animasi selesai */
+  overlay.addEventListener('transitionend', function(e) {
+    if (e.propertyName === 'opacity' && !overlay.classList.contains('spp-active')) {
+      if (document.body.style.overflow === 'hidden') {
+        document.body.style.overflow = '';
+        document.body.style.touchAction = '';
+      }
+      isOpen = false;
+    }
+  });
 
 })();
 </script>

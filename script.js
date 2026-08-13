@@ -746,7 +746,7 @@ function initGlobalSimulation() {
         '<div class="sim-result-item"><p class="sim-result-value">' + formatRupiah(harga) + '</p><p class="sim-result-label">Harga Mobil</p></div>' +
         '<div class="sim-result-item"><p class="sim-result-value">' + formatRupiah(dp) + '</p><p class="sim-result-label">Uang Muka (DP)</p></div>' +
         '<div class="sim-result-item"><p class="sim-result-value">' + tenor + ' Bulan</p><p class="sim-result-label">Tenor</p></div>' +
-        '<div class="sim-result-item"><p class="sim-result-value">' + bunga + '%</p><p class="sim-result-label">Bunga / Tahun</p></div>' +
+      
       '</div>' +
       '<div class="sim-result-highlight">' +
         '<p class="sim-result-value">' + formatRupiah(Math.round(cicilan)) + '</p>' +
